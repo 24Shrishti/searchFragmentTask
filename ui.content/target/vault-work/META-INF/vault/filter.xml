@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/re-wanderlust" mode="update"/>
+    <filter root="/content/re-wanderlust" mode="merge"/>
+    <filter root="/content/dam/re-wanderlust/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/re-wanderlust" mode="merge"/>
+    <filter root="/conf/re-wanderlust/settings/wcm/policies" mode="update"/>
+    <filter root="/content/dam/re-wanderlust/content-fragment-folder" mode="merge"/>
+    <filter root="/conf/re-wanderlust/settings/dam/cfm/models/contentfragmentforpopup" mode="merge"/>
+</workspaceFilter>

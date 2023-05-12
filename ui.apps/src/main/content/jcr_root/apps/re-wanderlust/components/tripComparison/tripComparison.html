@@ -1,0 +1,227 @@
+<sly data-sly-use.model="com.re.wanderlust.core.models.TripComparisonModel">
+  <div class="compare-tours-comp trip-Comparison">
+    <div
+      class="container data-attribute"
+      data-baseApiUrl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].apiBaseUrl}"
+      data-preSuffixName="${caconfig['com.re.wanderlust.core.caconfig.CookieConfig'].preSuffixName}"
+      data-preferredDate="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].tripDropDownApiUrl}"
+      data-tripCompareApi="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].tripCompare}"
+      data-iconImage="${model.crossIcon}"
+      data-onLabel="${model.onLabel}"
+      data-viewDetailLabel="${model.viewDetailButtonLabel}"
+      data-viewDetailRedir="${model.viewDetailRedirection  @ context='uri' , extension = 'html'}"
+      data-viewDetailIcon="${model.viewDetailButtonIcon}"
+      data-reviewsLabel="${model.reviewsLabel}"
+      data-starIcon="${model.starIcon}"
+      data-availableLabel="${model.availableLabel}"
+      data-availableIcon="${model.availableIcon}"
+      data-notAvailableLabel="${model.notAvailableLabel}"
+      data-notAvailableIcon="${model.notAvailableIcon}"
+      data-kmLabel="${model.kmLabel}"
+      data-yearsLabel="${model.yearsLabel}"
+      data-dateNotFound="${model.dateNotAvailableLabel}"
+      data-starsLabel="${model.starsLabel}"
+      data-notFound = "${model.notFound}"
+      data-badRequest="${model.badRequest}"
+      data-serverError="${model.serverError}"
+    >
+      <div class="row g-0 errorField">
+        <div class="col-md-4 col-lg-3 d-none d-md-block">
+          <div class="compare-tours-comp__info-block">
+            <div
+              class="card bg-transparent rounded-0 border-0 px-3 px-md-4 py-md-4 py-xxl-5"
+            >
+              <h4 class="text-white">${model.title}</h4>
+              <p class="text-white">${model.description}</p>
+            </div>
+            <ul class="list-group p-0 m-0">
+              <li class="list-group-item px-3 px-md-4 py-3 text-white">
+                ${model.startingFrom}
+              </li>
+              <li class="list-group-item px-3 px-md-4 py-3 text-white">
+                ${model.bringRideLabel}
+              </li>
+              <li class="list-group-item px-3 px-md-4 py-3 text-white">
+                ${model.experienceRatingLabel}
+              </li>
+              <li class="list-group-item px-3 px-md-4 py-3 text-white">
+                ${model.accommodationLabel}
+              </li>
+              <li class="list-group-item px-3 px-md-4 py-3 text-white">
+                ${model.backupVehicalLabel}
+              </li>
+              <li class="list-group-item px-3 px-md-4 py-3 text-white">
+                ${model.defaultRideLabel}
+              </li>
+              <li class="list-group-item px-3 px-md-4 py-3 text-white">
+                ${model.rideLevelLabel}
+              </li>
+              <li class="list-group-item px-3 px-md-4 py-3 text-white">
+                ${model.distancePerDayLabel}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="re-page-loaders" id="pageLoaders">
+          <div class="re-page-loader-inners">
+            <div class="fadein-elements">
+              <img
+                alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-01.svg"
+              />
+              <img
+                alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-02.svg"
+              />
+              <img
+                alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-03.svg"
+              />
+              <img
+                alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-04.svg"
+              />
+              <img
+                alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-05.svg"
+              />
+            </div>
+            <div class="loading-ellipsiss">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-8 col-lg-9">
+          <div
+            class="compare-tours-comp__carousel compareToursCarousels compareList"
+          >
+            <div class="toursAdd">
+              <div class="card bg-transparent rounded-0 border-0">
+                <div
+                  class="card-figure-addTour d-flex flex-wrap justify-content-center align-items-center"
+                >
+                  <div class="d-flex flex-wrap align-items-center">
+                    <span class="d-inline-block me-3"></span>
+                    <button
+                      id="addTour"
+                      data-addTourRedirection="${model.addTourRedirectionButton  @ context='uri' , extension = 'html'}"
+                    >
+                      <span><img src="${model.addTourButtonIcon}"/>${model.addTourButtonLabel}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-group p-0 m-0">
+                <li class="list-group-item p-3">${model.addTourDashField}</li>
+                <li class="list-group-item p-3">${model.addTourDashField}</li>
+                <li class="list-group-item p-3">${model.addTourDashField}</li>
+                <li class="list-group-item p-3">${model.addTourDashField}</li>
+                <li class="list-group-item p-3">${model.addTourDashField}</li>
+                <li class="list-group-item p-3">${model.addTourDashField}</li>
+                <li class="list-group-item p-3">${model.addTourDashField}</li>
+                <li class="list-group-item p-3">${model.addTourDashField}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 d-flex flex-wrap justify-content-center">
+          <div class="button button__primary">
+            <button
+              class="cmp-button goBack"
+              type="button"
+              data-goBackRedirection="${model.goBackRedirection  @ context='uri' , extension = 'html'}"
+            >
+              <span class="cmp-icon"></span>
+              <span class="cmp-text">${model.goBackButtonLabel}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script id="date_Compare_template" type="text/x-handlebars-template">
+
+    {{#each responseData}}
+    <div {{@index}} class = "toursall" id="tour{{this.tour_id}}" data-attr="{{this.tour_id}}">
+                          <button type="button"  data-attr="{{this.tour_id}}" class="btn btn-remove-tours bg-transparent text-white p-0 rounded-circle position-absolute d-flex flex-wrap align-items-center justify-content-center " id ="crossicon1">
+                            <img id = "crossicon" src ="{{../responseData.iconImage}}"/>
+                            <span class="cmp-icon "></span>
+                          </button>
+                        <div class="card bg-transparent rounded-0 border-0">
+                            <div class="card-figure overflow-hidden">
+                            {{#each this.tour_data}}
+                            
+                            <img src="{{other.banner_image.[0]}}" class="card-img-top rounded-0" alt="..." />
+
+                            {{/each}}
+                             <!--/* <img src="{{banner_image}}" class="card-img-top rounded-0" alt="..." /> */-->
+                            </div>
+                            <div class="card-body p-3">
+                                <h6 class="text-white">{{name}}</h6>
+                                <p>{{operator_name}}</p>
+                                <span class="price text-white">{{currency}} {{{currencyFormater default_price}}}</span>
+                                <p class="rating"><span class="text-white">
+                                <img src="{{../responseData.starIcon}}"/>{{trip_rating}}</span> ({{review_count}} {{../responseData.reviewsLabel}})</p>
+                            </div>
+                        </div>
+                        <ul class="list-group p-0 m-0">
+                            <li class="list-group-item p-3">{{start_point}} {{../responseData.onLabel}}
+
+                            <select class = "datedropdown" id="tourid{{this.tour_id}}">
+                            {{#if_equ date_dropDown.length '0'}}
+                            {{#each date_dropDown}}                        
+                                    <option value = "{{trip_id}}">{{{dateFormater trip_start_date}}}</option>
+                                    {{/each}}
+                                    {{/if_equ}}
+                                    {{#if_eq date_dropDown.length '0'}}                                                          
+                                            <option value = "{{trip_id}}">{{../responseData.dateNotAvailable}}</option>                                       
+                                            {{/if_eq}}
+                                    </select>
+
+                            </li>
+                            {{#if_eq customer_own_motorcycle '1'}}
+                            <li class="list-group-item p-3"><img src="{{../responseData.availableIcon}}"/>{{../responseData.availableLabel}}</li>
+                            {{/if_eq}}
+                            {{#if_eq customer_own_motorcycle '0'}}
+                            <img src="{{../responseData.notAvailableIcon}}"/>
+                            <li class="list-group-item p-3">{{../responseData.notAvailableLabel}}</li>
+                            {{/if_eq}}
+                            <li class="list-group-item p-3">{{lead_exp}} {{../responseData.yearsLabel}}, {{lead_rating}} {{../responseData.starsLabel}} </li>
+                            <li class="list-group-item p-3">{{accommodation_type}}</li>
+                            {{#if_eq trip_include_backup_vehical '1'}}
+                            <li class="list-group-item p-3">{{../responseData.availableLabel}}</li>
+                            {{/if_eq}}
+                            {{#if_eq trip_include_backup_vehical '0'}}
+                            <li class="list-group-item p-3">{{../responseData.notAvailableLabel}}</li>
+                            {{/if_eq}}
+
+                            <li class="list-group-item p-3">{{default_motorcycle_model}}</li>
+                            <li class="list-group-item p-3">{{ride_level}}</li>
+                            <li class="list-group-item p-3">{{distance_per_day}} {{../responseData.kmLabel}}</li>
+                        </ul>
+                        <div class="button button__primary-v2 d-flex flex-wrap justify-content-center position-absolute">
+                            <button class="cmp-button position-relative rounded-0 viewdetails" id = "viewdetailsId" type="button" data-viewDetailRedir="{{../responseData.viewDetailRedir}}" data-operatorId = "{{operator_id}}" data-tourId = "{{tour_id}}" data-tripId="{{trip_id}}">
+                                <span class="cmp-text">{{../responseData.viewDetailLabel}}</span>
+                                <span
+                                    class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                            </button>
+                        </div>
+                    </div>
+    {{/each}}
+  </script>
+
+  <script id="date_template" type="text/x-handlebars-template">
+    {{#each apiDates}}
+          <select class="datedropdown" id="tourid{{this.tour_id}">
+              <option class="optionValue" value="{{this.trip_id}}">{{{dateFormater this.trip_start_date}}}</option>
+      {{/each}}
+              </select>
+          </div>
+  </script>
+</sly>

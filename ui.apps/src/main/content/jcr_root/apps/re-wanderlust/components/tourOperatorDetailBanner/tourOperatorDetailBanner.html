@@ -1,0 +1,264 @@
+<sly data-sly-use.model="com.re.wanderlust.core.models.TourOperatorDetailBannerModel">
+    <div data-sly-test.chk="${model.tourOperatorDetails.size == 0}">${model.errorMsg}</div>
+    <div class="error-show-hide" data-sly-test="${!chk}" data-stausCode="${model.code}" 
+    data-notFound = "${model.notFound}"
+    data-badRequest="${model.badRequest}"
+    data-serverError="${model.serverError}">
+        <div data-sly-list.val="${model.tourOperatorDetails}">
+            <div class="container-fluid bg-dark-black  rew-operatorBike-comp g-0 p-0">
+                <div class="operator-banner-comp">
+                    <div class="container-fluid g-0">
+                        <div class="position-relative">
+                            <div class="operator-logo">
+                                <img src="${model.defaultLogoImage}">
+                            </div>
+                            <div class="operator-img"> 
+                                <img src="${model.verifiedOperatorImage}">
+                            </div>
+                            <div class="banner-bg" data-sly-test.bannerImg=${val.operatorImage}>
+                            
+                                <picture>
+                                    <source class="mobile w-100" id="bannerMobileImg" srcset="${val.operatorImage}"
+                                        media="(max-width: 767px)">
+                                    <img class="bg w-100 bannerDesktopImg" srcset="${val.operatorImage}" alt="${model.altText}"
+                                        title="">
+                                </picture>
+                            </div>
+        
+                            <div class="banner-bg" data-sly-test=${!bannerImg}>
+                                <picture>
+                                    <source class="mobile w-100 bannerMobileImg" srcset="${model.defaultOperatorBanner}"
+                                        media="(max-width: 767px)">
+                                    <img class="bg w-100" id="bannerDesktopImg" srcset="${model.defaultOperatorBanner}"
+                                        alt="${model.altText}" title="">
+                                </picture>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 d-md-flex justify-content-between pt-5 pb-4">
+                            
+                                <div class="neel-rentals">
+                                    <h4>${val.name}</h4>
+                                    <div class="reviews pt-2">
+                                        <span class="pe-1 d-inline-flex"><img src="${model.starIcon}"
+                                                alt=""></span>${val.rating}<span> (${val.totalReviews}
+                                            ${model.reviewLabel})</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap col-md-6 pt-4 pt-md-0 rental-grid-wrap align-self-start">
+                                        <div class="neel-rentals-desc-grid d-flex position-relative align-items-end">
+                                            <img src="${model.fleetSizeIcon}" class="mb-1" alt="${model.altText}">
+                                            <div class="d-block ps-2 ps-md-3">
+                                                <p class="font-size-1">${val.fleetSize}</p>
+                                                <span class="font-size-3 d-inline-block">${model.fleetSize}</span>
+                                            </div>
+                                        </div>
+                                        <div class="neel-rentals-desc-grid d-flex position-relative align-items-end">
+                                            <img src="${model.bikeModelIcon}" class="mb-1" alt="${model.altText}">
+                                            <div class="d-block ps-2 ps-md-3">
+                                                <p class="font-size-1">${val.toursCount}</p>
+                                                <span class="font-size-3 d-inline-block">${model.availableTours}</span>
+                                            </div>
+                                        </div>
+                                        <div class="neel-rentals-desc-grid d-flex position-relative align-items-end">
+                                            <img src="${model.locationIcon}" class="mb-1" alt="${model.altText}">
+                                            <div class="d-block ps-2 ps-md-3">
+                                                <p class="font-size-1">
+                                                    ${val.location}
+                                                </p>
+                                                <span class="font-size-3 d-inline-block">${model.location}</span>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-12 d-md-flex justify-content-between check-policy">
+                                <div class="col-12 col-md-6 font-size-2 open-modal" data-bs-toggle="modal"
+                                    data-bs-target="#valueAddedServicesModal"><span>${model.valueAddedPopUpLabel}</span>
+                                </div>
+                                <div class="col-12 col-md-6 font-size-2 open-modal" data-bs-toggle="modal"
+                                    data-bs-target="#checkPolicy"><span>${model.lateReturnCancellationPolicy}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- The check policy modala -->
+                <div class="modal modal__checkPolicy" id="checkPolicy">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-dark rounded-0">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">${val.name}</h4>
+                                <button type="button" class="btn-close border-0" data-bs-dismiss="modal">
+                                    <span class="icon-close"></span>
+                                </button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body"  data-sly-set.value="${model.authoringField}"
+                            data-sly-repeat.cancellationPolicyEntity="${val.cancellationPolicyEntity}">
+                                <h5 class="pb-3">${value.cancellationPolicy}</h5>
+                                <p class="pb-4 font-size-2 color-light-color-font">
+                                    ${value.description}
+                                </p>
+                                <div class="col-12 policy-data">
+                                    <div class="d-flex  py-2 px-3 bg-neutral-black-grey-base">
+                                        <div class="col-5 col-md-4 color-light-color-font">
+                                            ${value.timeFrameLabel}
+                                        </div>
+                                        <div class="col-7 col-md-8 color-light-color-font">
+                                            ${value.cancellationAmountLabel}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex py-2 px-3">
+                                        <div class="col-5 col-md-4"><span
+                                                class="d-block">${value.betweenLabel}</span>${cancellationPolicyEntity.atMostDays}
+                                            ${value.daysOrMoreLabel}
+                                        </div>
+                                        <div class="col-7 col-md-8">
+                                            ${cancellationPolicyEntity.atMostDaysIntervalCharge}${value.bookingAmountLabel}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex py-2 px-3">
+                                        <div class="col-5 col-md-4"><span
+                                                class="d-block">${value.betweenLabel}</span>${cancellationPolicyEntity.fromDays}
+                                            ${value.toLabel} ${cancellationPolicyEntity.toDays} ${value.daysLabel}
+                                        </div>
+                                        <div class="col-7 col-md-8">
+                                            ${cancellationPolicyEntity.secondIntervalOfDaysCharges}${value.bookingAmountLabel}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex py-2 px-3">
+                                        <div class="col-5 col-md-4"><span class="d-block">${value.betweenLabel}</span>
+                                            ${cancellationPolicyEntity.firstIntervalOfDays} ${value.daysLabel}
+                                        </div>
+                                        <div class="col-7 col-md-8">
+                                            ${cancellationPolicyEntity.firstIntervalOfDaysCharges}${value.bookingAmountLabel}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="late-returns py-4">
+                                    <h5 class="py-3">${model.lateReturnLabel}</h5>
+                                    <p class="pb-4 font-size-2 color-light-color-font"
+                                        data-sly-test="${model.lateReturnNote}">${model.lateReturnNote}</p>
+                                    <div class="col-12">
+                                        <div class="d-flex">
+                                            <div class="col-3"><span
+                                                    class="d-block font-size-2 color-light-color-font">${model.lateReturnFirstWarningLabel}</span>
+                                                ${cancellationPolicyEntity.currency}
+                                                ${cancellationPolicyEntity.firstHoursIntervalCharge}
+                                            </div>
+                                            <div class="col-3"><span
+                                                    class="d-block font-size-2 color-light-color-font">${model.lateReturnSecondWarningLabel}</span>
+                                                ${cancellationPolicyEntity.currency}
+                                                ${cancellationPolicyEntity.secondHoursIntervalCharge}
+                                            </div>
+                                            <div class="col-6"><span
+                                                    class="d-block font-size-2 color-light-color-font">${model.lateReturnThirdWarningLabel}</span>
+                                                ${cancellationPolicyEntity.currency}
+                                                ${cancellationPolicyEntity.atMostHoursCharge}
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div> -->
+                                <div class="col-12 d-flex justify-content-center close-cancellation-modal">
+                                    <button type="button" class="btn bg-light submit rounded-0"
+                                        data-bs-dismiss="modal">${model.closeBtnLabel}
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!-- <div class="modal-backdrop fade show"></div> -->
+                </div>
+
+                <!-- Value Added Services Modal-->
+                <div class="modal modal__valueAddedServices" id="valueAddedServicesModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content bg-dark rounded-0">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">${val.name}</h4>
+                                <button type="button" class="btn-close border-0" data-bs-dismiss="modal">
+                                    <span class="icon-close"></span>
+                                </button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <h5 class="pb-3">${model.valueAddedTitle}</h5>
+
+
+                                <div
+                                    data-sly-test.chkValue="${val.valueAddedEntity.riderAccessoriesList || val.valueAddedEntity.MotorcycleAccessoriesEntity || val.valueAddedEntity.othersAccessories}">
+
+                                    <p class="pb-4 font-size-2">${model.valueAdedPopUpDescription}</p>
+                                    <div class="row gy-4">
+                                        <div class="col-md-6"
+                                            data-sly-test="${val.valueAddedEntity.riderAccessoriesList}">
+                                            <span class="subtitle">${model.riderAccessoriesLabel}</span>
+                                            <ul>
+                                                <li
+                                                    data-sly-repeat.value="${val.valueAddedEntity.riderAccessoriesList}">
+                                                    ${value.riderAccessoriesName}</li>
+
+                                            </ul>
+
+                                        </div>
+
+                                        <div class="col-md-6"
+                                            data-sly-test="${val.valueAddedEntity.MotorcycleAccessoriesEntity}">
+                                            <span class="subtitle">${model.bikeAccessoriesLabel}</span>
+                                            <ul>
+                                                <li
+                                                    data-sly-repeat.bikeService="${val.valueAddedEntity.MotorcycleAccessoriesEntity}">
+                                                    ${bikeService.bikeAccessoriesName}</li>
+
+                                            </ul>
+
+                                        </div>
+
+                                        <div class="col-md-6" data-sly-test="${val.valueAddedEntity.othersAccessories}">
+                                            <span class="subtitle">${model.otherAccessoriesLabel}</span>
+                                            <ul>
+                                                <li data-sly-repeat.others="${val.valueAddedEntity.othersAccessories}">
+                                                    ${others.otherAccessoriesName}</li>
+
+                                            </ul>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div data-sly-test="${!chkValue}">
+
+                                    <div class="col-md-6">
+                                        ${model.noResultMessage}
+
+                                    </div>
+
+                                </div>
+                                <div class="col-12 mt-5 d-flex justify-content-center close-cancellation-modal">
+                                    <button type="button" class="btn bg-light submit rounded-0"
+                                        data-bs-dismiss="modal">${model.closeBtnLabel}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="modal-backdrop fade show"></div> -->
+                </div>
+                <!-- End Value Added Services Modal-->
+
+            </div>
+        </div>
+    </div>
+</sly>

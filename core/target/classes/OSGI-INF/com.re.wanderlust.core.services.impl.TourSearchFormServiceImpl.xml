@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.re.wanderlust.core.services.impl.TourSearchFormServiceImpl">
+  <service>
+    <provide interface="com.re.wanderlust.core.services.TourSearchFormService"/>
+  </service>
+  <reference name="restServices" interface="com.re.wanderlust.core.services.RestServices" field="restServices"/>
+  <implementation class="com.re.wanderlust.core.services.impl.TourSearchFormServiceImpl"/>
+</scr:component>

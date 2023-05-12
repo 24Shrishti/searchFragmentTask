@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="com.re.wanderlust.core.services.impl.TopToursServiceImpl" enabled="true" immediate="true">
+  <service>
+    <provide interface="com.re.wanderlust.core.services.TopToursService"/>
+  </service>
+  <reference name="queryBuilder" interface="com.day.cq.search.QueryBuilder" field="queryBuilder"/>
+  <reference name="restServices" interface="com.re.wanderlust.core.services.RestServices" field="restServices"/>
+  <implementation class="com.re.wanderlust.core.services.impl.TopToursServiceImpl"/>
+</scr:component>

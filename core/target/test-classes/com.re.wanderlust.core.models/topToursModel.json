@@ -1,0 +1,14 @@
+{
+  "topTours" : {
+    "startFrom": "Start",
+    "arrowIcon": "/content/dam/re-wanderlust/verified-icon.svg",
+    "seeAll": "See All",
+    "defaultImage": "/content/dam/re-wanderlust/Short Rides.png",
+    "calenderIcon": "/content/dam/re-wanderlust/calenderIcon.png",
+    "redirectionPath": "/content/re-wanderlust/us/en/tour-operator-detail-page",
+    "daysLabel": "Days",
+    "seeAllLink": "/content/re-wanderlust/us/en/top-tour-partners",
+    "dayLabel": "Day"
+  }
+
+}

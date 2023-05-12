@@ -1,0 +1,15 @@
+{
+  "galleryComp" : {
+    "buttonLabel": "Button",
+    "startIconLabel": "/content/dam/re-wanderlust/star.png",
+    "defaultImageLabel": "/content/dam/re-wanderlust/Trails 1.png",
+    "galleryImageIcon": "/content/dam/re-wanderlust/dropIcon.png",
+    "buttonIconLabel": "/content/dam/re-wanderlust/terrain-3.svg",
+    "mute": "true",
+    "operatedBy": "Operated By",
+    "redirectionPath": "/content/re-wanderlust/us/en/example-page",
+    "limit": 3,
+    "reviews": "Reviews",
+    "autoplay": "true"
+  }
+}

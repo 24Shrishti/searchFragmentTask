@@ -1,0 +1,26 @@
+{
+  "paymentDetailModel": {
+    "jcr:primaryType":"nt:unstructured",
+    "jcr:createdBy":"admin",
+    "rzpDescription":"Razorpay description",
+    "razorpayLogo":"/content/dam/re-wanderlust/content-fragment-folder",
+    "successPath":"/content/screens/we-retail/apps/virtual-showroom/en",
+    "jcr:lastModifiedBy":"admin",
+    "jcr:created":"Thu Sep 15 2022 20:01:10 GMT+0530",
+    "title":"title",
+    "failedPath":"/content/screens/we-retail",
+    "jcr:lastModified":"Thu Sep 15 2022 20:02:14 GMT+0530",
+    "sling:resourceType":"re-wanderlust/components/paymentDetailModel",
+    "bookingConfirmation" : "Booking_Confirmation",
+    "bookingDetailTitle" : "Booking_Detail_Title",
+    "bookingNumber":"Booking_Number",
+    "paymentID": "Payment_Id",
+    "startPointLabel": "StartPoint_Label",
+    "startDateTime": "StartDate_Time",
+    "availabilityMessage": "Availability_Message",
+    "checkBookingButton": "check_Booking_Button",
+    "downloadInvoiceButton": "downloadInvoice_Button",
+    "bookingConfirmedIcon": "booking_confirmation",
+    "invoiceIcon": "download_Icon"
+  }
+}

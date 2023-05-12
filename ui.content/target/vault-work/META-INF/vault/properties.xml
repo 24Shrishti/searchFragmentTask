@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>RE Wanderlust - UI content</comment>
+<entry key="allowIndexDefinitions">false</entry>
+<entry key="name">re-wanderlust.ui.content</entry>
+<entry key="acHandling">merge</entry>
+<entry key="created">2023-05-12T14:06:02.817Z</entry>
+<entry key="groupId">com.re.wanderlust</entry>
+<entry key="dependencies-locations">com.re.wanderlust:re-wanderlust.ui.apps:1.0.0-SNAPSHOT=maven:com.re.wanderlust:re-wanderlust.ui.apps:1.0.0-SNAPSHOT:zip</entry>
+<entry key="version">1.0.0-SNAPSHOT</entry>
+<entry key="packageType">content</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="dependencies">com.re.wanderlust:re-wanderlust.ui.apps:1.0.0-SNAPSHOT</entry>
+<entry key="cloudManagerTarget">none</entry>
+<entry key="group">com.re.wanderlust</entry>
+<entry key="description">UI content package for RE Wanderlust</entry>
+<entry key="artifactId">re-wanderlust.ui.content</entry>
+</properties>

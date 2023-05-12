@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Rental Partner Navigation"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <tabs
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                        maximized="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <basic
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Basic"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <registrationFormLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the title of registration form."
+                                                fieldLabel="Registration Form Title"
+                                                name="./registrationFormLabel"/>
+                                            <accountSetupLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of account set up label."
+                                                fieldLabel="Account Setup Label"
+                                                name="./accountSetupLabel"/>
+                                            <contractLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of contract label."
+                                                fieldLabel="Contract Label"
+                                                name="./contractLabel"/>
+                                            <businessLiveLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of business live label."
+                                                fieldLabel="Business Live Label"
+                                                name="./businessLiveLabel"/>
+                                            <anchorLinkLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of cta link label."
+                                                fieldLabel="CTA Link Label"
+                                                name="./anchorLinkLabel"/>  
+                                            <anchorLinkRedirection
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the redirection path for cta link."
+                                                fieldLabel="CTA Link"
+                                                name="./anchorLinkRedirection"/> 
+                                        </items>
+                                    </column>
+                                </items>
+                            </basic>
+                            <Icons
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Icons"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        margin="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <iconFirst
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the first icon."
+                                                fieldLabel="First Icon"
+                                                name="./iconFirst"
+                                                rootPath="/content/dam"/>
+                                            <iconSecond
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the second icon."
+                                                fieldLabel="Second Icon"
+                                                name="./iconSecond"
+                                                rootPath="/content/dam"/>
+                                            <iconThird
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the third icon."
+                                                fieldLabel="Third Icon"
+                                                name="./iconThird"
+                                                rootPath="/content/dam"/>
+                                            <iconFourth
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the fourth icon."
+                                                fieldLabel="Fourth Icon"
+                                                name="./iconFourth"
+                                                rootPath="/content/dam"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </Icons>
+                            <error
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Error Label"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <errorLabels
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                path="re-wanderlust/components/commonFields/errorLabels"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </error>
+                            <hideComponent
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Hide Component"
+                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hideComponent
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                path="re-wanderlust/components/commonFields/hideComponent"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </hideComponent>
+                        </items>
+                    </tabs>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

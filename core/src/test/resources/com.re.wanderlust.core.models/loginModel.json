@@ -1,0 +1,28 @@
+{
+  "loginModel": {
+    "jcr:primaryType":"nt:unstructured",
+    "jcr:createdBy":"admin",
+    "rzpDescription":"Razorpay description",
+    "razorpayLogo":"/content/dam/re-wanderlust/content-fragment-folder",
+    "successPath":"/content/screens/we-retail/apps/virtual-showroom/en",
+    "jcr:lastModifiedBy":"admin",
+    "jcr:created":"Thu Sep 15 2022 20:01:10 GMT+0530",
+    "title":"title",
+    "failedPath":"/content/screens/we-retail",
+    "jcr:lastModified":"Thu Sep 15 2022 20:02:14 GMT+0530",
+    "sling:resourceType":"re-wanderlust/components/loginModel",
+    "loginLinkText": "Login_Link_Text",
+    "imgTitle": "Img_Title",
+    "includeProfileImage": "Include_Profile_Image",
+    "myProfileText": "My",
+    "myProfileUrl": "My_Profile_Url",
+    "myProfileAnchorTitle": "My_Profile_Anchor_Title",
+    "editProfileText": "Edit_Profile",
+    "editProfileUrl": "Edit_Profile_Url",
+    "editProfileAnchorTitle": "Edit_Profile_Anchor_Title",
+    "logoutProfileText" : "LogOut_Profile_Text",
+    "logoutProfileUrl": "LogOut1",
+    "logoutProfileAnchorTitle": "LogOut2"
+
+  }
+}

@@ -1,0 +1,25 @@
+<sly data-sly-use.model="com.re.wanderlust.core.models.SecondaryHeaderModel">
+    <div class="secondary-header-comp">
+        <div class="secondary-header-comp__wrap">
+            <div class="position-relative bg-dark">
+                <div class="secondary-header-bar position-relative">
+                    <img src="${model.imgLogo}" data-sly-test="${model.wanderlustCategories == 'tour'}">
+                    <div class="secondary-header-comp__title text-white py-3"
+                        data-sly-resource="${'./secondaryHeaderTitle' @ resourceType='re-wanderlust/components/title'}">
+                    </div>
+                    <sly 
+                        data-sly-resource="${'./secondaryHeaderCartModal' @ resourceType='re-wanderlust/components/cartModal'}">
+                    </sly>
+                    <sly data-sly-test="${model.wanderlustCategories == 'tour'}"
+                        data-sly-resource="${'./secondaryHeaderCompareButton' @ resourceType='re-wanderlust/components/compareButton'}" 
+                         >
+                      
+                    </sly>
+                </div>
+                <div class="secondary-header-comp__breadcrumb bg-dark" aria-label="breadcrumb"
+                    data-sly-resource="${'./secondaryHeaderBreadcrum' @ resourceType='re-wanderlust/components/breadcrumb'}">
+                    </div>
+            </div>
+        </div>
+    </div>
+</sly>

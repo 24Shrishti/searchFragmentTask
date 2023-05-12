@@ -1,0 +1,542 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/css/datepicker.min.css">
+
+<sly data-sly-use.model="com.re.wanderlust.core.models.TourSearchFormResultModel">
+    <div class="accessMapValue" data-label="${model.mapAttribute}"></div>
+    <div data-sly-list="${model.list}">
+        ${item.sortFiltersKey}
+        ${item.sortFiltersValue}
+    </div>
+<div class="tour-searchFormResult-comp position-relative">
+    <div class="tour-searchFormResult-comp__body-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-xxl-3 search-filter-comp">
+                    <div class="search-filter-comp__filter-panel">
+                        <div
+                            class="filter-panel-header position-relative d-flex flex-wrap justify-content-between align-items-center p-3 pt-5 pt-md-4">
+                            <button
+                                class="d-block d-md-none position-absolute mt-2 mx-2 hideFilterPanelMobBtn bg-transparent text-white"
+                                id="hideFilterPanelMobBtn" type="button">
+                                <span class="icon-close"></span>
+                            </button>
+                            <h5 class="text-white">${model.filterLabel}</h5>
+                            <div class="button">
+                                <button class="cmp-button bg-transparent rounded-0 p-0 reset-all"
+                                    disabled="disabled">${model.resetAllLabel}</button>
+                            </div>
+                        </div>
+                        <div class="filter-panel-body py-3">
+                            <div class="accordion" id="tourSearchResultFilterAccordion">
+                                <div class="accordion-item bg-transparent border-0 rounded-0">
+                                    <button class="accordion-button py-2 bg-transparent text-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+                                        aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                        ${model.tourDurationLabel}
+                                        <span class="icon-arrow-down d-block position-absolute"></span>
+                                    </button>
+                                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="panelsStayOpen-headingOne">
+                                        <div class="accordion-body" id="tour_filter-duration-template">
+         
+                                            <div class="form-check d-flex flex-wrap position-relative">
+                                                <input class="form-check-input model_checkbox" name="bike_model"
+                                                    type="checkbox" value="CLASSIC 350" id="CLASSIC 350">
+                                                <label class="form-check-label text-white" for="CLASSIC 350">CLASSIC
+                                                    350</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border-0 rounded-0">
+                                    <button class="accordion-button py-2 bg-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo">
+                                        Start Point
+                                        <span class="icon-arrow-down d-block position-absolute"></span>
+                                    </button>
+                                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="panelsStayOpen-headingTwo">
+                                        <div class="accordion-body" id="tour_filter-startPoint-template">
+
+                                            <div class="form-check d-flex flex-wrap position-relative">
+                                                <input class="form-check-input model_checkbox" name="bike_model"
+                                                    type="checkbox" value="CLASSIC 350" id="CLASSIC 350">
+                                                <label class="form-check-label text-white" for="CLASSIC 350">CLASSIC
+                                                    350</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border-0 rounded-0">
+                                    <button class="accordion-button py-2 bg-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree">
+                                        ${model.destinationLabel}
+                                        <span class="icon-arrow-down d-block position-absolute"></span>
+                                    </button>
+                                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="panelsStayOpen-headingThree">
+                                        <div class="accordion-body" id="tour_filter-destination-template">
+
+                                            <div class="form-check d-flex flex-wrap position-relative">
+                                                <input class="form-check-input model_checkbox" name="bike_model"
+                                                    type="checkbox" value="CLASSIC 350" id="CLASSIC 350">
+                                                <label class="form-check-label text-white" for="CLASSIC 350">CLASSIC
+                                                    350</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border-0 rounded-0">
+                                    <button class="accordion-button py-2 bg-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseFour">
+                                        ${model.languageSpokenLabel}
+                                        <span class="icon-arrow-down d-block position-absolute"></span>
+                                    </button>
+                                    <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="panelsStayOpen-headingFour">
+                                        <div class="accordion-body" id="tour_filter-language-template">
+
+                                            <div class="form-check d-flex flex-wrap position-relative">
+                                                <input class="form-check-input model_checkbox" name="bike_model"
+                                                    type="checkbox" value="CLASSIC 350" id="CLASSIC 350">
+                                                <label class="form-check-label text-white" for="CLASSIC 350">CLASSIC
+                                                    350</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border-0 rounded-0">
+                                    <button class="accordion-button py-2 bg-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseFive">
+                                        ${model.tourRatingsLabel}
+                                        <span class="icon-arrow-down d-block position-absolute"></span>
+                                    </button>
+                                    <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="panelsStayOpen-headingFive">
+                                        <div class="accordion-body" id="tour_filter-rating-template">
+
+                                            <div class="form-check d-flex flex-wrap position-relative">
+                                                <input class="form-check-input model_checkbox" name="bike_model"
+                                                    type="checkbox" value="CLASSIC 350" id="CLASSIC 350">
+                                                <label class="form-check-label text-white" for="CLASSIC 350">CLASSIC
+                                                    350</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border-0 rounded-0">
+                                    <button class="accordion-button py-2 bg-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseSix">
+                                        ${model.partnersLabel}
+                                        <span class="icon-arrow-down d-block position-absolute"></span>
+                                    </button>
+                                    <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+                                        aria-labelledby="panelsStayOpen-headingSix">
+                                        <div class="accordion-body" id="tour_filter-partners-template">
+
+                                            <div class="form-check d-flex flex-wrap position-relative">
+                                                <input class="form-check-input model_checkbox" name="bike_model"
+                                                    type="checkbox" value="CLASSIC 350" id="CLASSIC 350">
+                                                <label class="form-check-label text-white" for="CLASSIC 350">CLASSIC
+                                                    350</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item bg-transparent border-0 rounded-0">
+                                    <button class="accordion-button py-2 bg-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseSeven">
+                                        Currency
+                                        <span class="icon-arrow-down d-block position-absolute"></span>
+                                    </button>
+                                    <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse"
+                                        aria-labelledby="panelsStayOpen-headingSeven">
+                                        <div class="accordion-body" id="tour_filter-currency-template">
+
+                                            <div class="form-check d-flex flex-wrap position-relative">
+                                                <input class="form-check-input model_checkbox" name="bike_model"
+                                                    type="checkbox" value="CLASSIC 350" id="CLASSIC 350">
+                                                <label class="form-check-label text-white" for="CLASSIC 350">CLASSIC
+                                                    350</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-panel-footer p-3">
+                            <div class="button button__primary-v2">
+                                <button class="cmp-button position-relative rounded-0">
+                                    <span class="cmp-text">${model.applyLabel}</span>
+                                    <span
+                                        class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-xxl-9 tours-search-listing-wrap">
+                    <!-- Form -->
+                    <div class="tour-searchForm-comp__form bg-transparent position-relative mb-4 px-md-0">
+                        <div class="row g-0">
+                            <!--/* <div class="col-12 col-md-3 mb-3">
+                                <div class="dropdown">
+                                    <button
+                                        class="btn startFrom-btn dropdown-toggle text-start w-100 rounded-0 bg-transparent"
+                                        type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border: 1px solid #707070;">${model.startingPointLabel}</button>
+                                    <ul class="dropdown-menu border-0 rounded-0">
+                                        <li class="startFrom">
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                1</button>
+                                        </li>
+                                        <li class="startFrom">
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                2</button>
+                                        </li>
+                                        <li class="startFrom">
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                3</button>
+                                        </li>
+                                        <li class="startFrom">
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                4</button>
+                                        </li>
+                                        <li class="startFrom">
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                5</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3 mb-3">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle text-start w-100 rounded-0 bg-transparent"
+                                        type="button" data-bs-toggle="dropdown" aria-expanded="false"style="border: 1px solid #707070;">${model.whereLabel}</button>
+                                    <ul class="dropdown-menu border-0 rounded-0">
+                                        <li>
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                1</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                1</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                1</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                1</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="btn text-start w-100 border-0 rounded-0">option
+                                                1</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-3 mb-3">
+                                <div class="tourSearchFormDateBox" data-bs-toggle="modal"
+                                    data-bs-target="#monthYearPickerModal"style="border: 1px solid #707070;">
+                                    <span>${model.monthandYearLabel}</span>
+                                    <span class="icon-calender"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-2 mb-3">
+                                <div class="button button__primary-v2">
+                                    <button class="cmp-button position-relative rounded-0">
+                                        <span class="cmp-text">${model.searchLabel}</span>
+                                        <span
+                                            class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                                    </button>
+                                </div>
+                            </div> */-->
+                       
+                            <div data-sly-resource="${'./tourSearchForm' @ resourceType='re-wanderlust/components/tourSearchForm'}"></div>
+                        </div>
+                    </div>
+                    <!-- End Form -->
+                    <div id="searchResult-tours_container"></div>
+                    <!-- Load More Button -->
+                    <div class="row my-5 justify-content-center loadMore-tourSearchResult">
+                        <div class="col-8 col-md-4 col-lg-3 col-xl-2">
+                            <div class="button button__primary-v2">
+                                <button class="cmp-button position-relative rounded-0">
+                                    <span class="cmp-text">Load More</span>
+                                    <span
+                                        class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Load More Button -->
+
+                    <!-- Check Out Rentals Carousel -->
+                    <div class="related-rentals-wrap position-relative">
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <h5 class="text-white text-start mb-4">Check out Rentals around you</h5>
+                            </div>
+                            <div class="col-auto">
+                                <div class="button button__white-link">
+                                    <button type="button" class="cmp-button p-0">
+                                        <span class="cmp-text">See All</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="related-rentals__carousel" id="realtedRentalsCarousel">
+                            <a href="#" class="d-block text-decoration-none">
+                                <img src="https://rewanderlustuat.blob.core.windows.net/tour/operator/045608b4-7609-41cd-95c1-b790b8b9e137/tour/images/image-20220421112724.jpg" class="w-100" alt="" />
+                                <h6 class="mt-3 mb-2">Classic 350</h6>
+                                <p>${model.startingFormLabel}<span>₹ 999*</span> Per day</p>
+                            </a>
+                            <a href="#" class="d-block text-decoration-none">
+                                <img src="https://rewanderlustuat.blob.core.windows.net/tour/operator/045608b4-7609-41cd-95c1-b790b8b9e137/tour/images/image-20220421112724.jpg" class="w-100" alt="" />
+                                <h6 class="mt-3 mb-2">Classic 350</h6>
+                                <p>${model.startingFormLabel}<span>₹ 999*</span> Per day</p>
+                            </a>
+                            <a href="#" class="d-block text-decoration-none">
+                                <img src="https://rewanderlustuat.blob.core.windows.net/tour/operator/045608b4-7609-41cd-95c1-b790b8b9e137/tour/images/image-20220421112724.jpg" class="w-100" alt="" />
+                                <h6 class="mt-3 mb-2">Classic 350</h6>
+                                <p>${model.startingFormLabel}<span>₹ 999*</span> Per day</p>
+                            </a>
+                            <a href="#" class="d-block text-decoration-none">
+                                <img src="/content/dam/re-wanderlust/gallery-7@2x.png" class="w-100" alt="" />
+                                <h6 class="mt-3 mb-2">Classic 350</h6>
+                                <p>${model.startingFormLabel}<span>₹ 999*</span> Per day</p>
+                            </a>
+                            <a href="#" class="d-block text-decoration-none">
+                                <img src="https://rewanderlustuat.blob.core.windows.net/tour/operator/045608b4-7609-41cd-95c1-b790b8b9e137/tour/images/image-20220421112724.jpg" class="w-100" alt="" />
+                                <h6 class="mt-3 mb-2">Classic 350</h6>
+                                <p>${model.startingFormLabel}<span>₹ 999*</span> Per day</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End Check Out Rentals Carousel -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Handlebars template starts -->
+    <script id="searchResults_tours-template" type="text/x-handlebars-template">
+        {{#each data}}
+       {{#ifAvaliable false}}
+        <div class="d-flex flex-wrap justify-content-between align-items-baseline align-items-md-center showResultsBar">
+           <span class="text-white showResults showResultsMain">{{count}} {{../value.toursForYouLabel}}</span>
+           <div class="d-flex flex-wrap align-items-center">
+               <span class="text-white showResults">sortByLabel</span>
+               <div class="dropdown sortByDropdown ps-2">
+                   <button class="btn btn-secondary dropdown-toggle rounded-pill border-0 selectedSort"
+                       type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown
+                       button</button>
+                   <ul class="dropdown-menu border-0 rounded-0">
+                       <li>
+                           <button type="button" class="dropdown-item sortDropDownOptions">tourRatingsLabel</button>
+                       </li>
+                       <li>
+                           <button type="button" class="dropdown-item sortDropDownOptions">Another action</button>
+                       </li>
+                       <li>
+                           <button type="button" class="dropdown-item sortDropDownOptions">Something else here</button>
+                       </li>
+                   </ul>
+               </div>
+           </div>
+       </div>
+       {{/ifAvaliable}}
+       <!-- Result Cards -->
+       <div class="row tours-searchResultCards g-4 mb-4">
+        {{#each this.item}}
+           <div class="col-md-6 col-lg-4">
+               <div class="card border-0 overflow-hidden">
+                   <div class="card-figure overflow-hidden position-relative">
+                       <span
+                           class="filling-fast text-white py-1 px-2 position-absolute top-0 end-0 mt-3 me-3">Filling
+                           Fast</span>
+                       <div
+                           class="card-figure__overlay text-white position-absolute bottom-0 start-0 end-0">
+                           <h5>{{tour_name}}</h5>
+                           <span class="location">Mumbai - Pushkar</span>
+                       </div>
+                       <img src="{{banner_image.[0]}}"
+                           class="card-img-top rounded-0" alt="" />
+                   </div>
+                   <div class="card-body p-0 bg-transparent">
+                       <div class="p-3">
+                           <ul class="d-flex flex-wrap justify-content-between p-0 mb-3">
+                               <li class="d-flex flex-wrap text-left flex-row align-items-center">
+                                   <img src="/content/dam/re-wanderlust/calendar_today-3.svg" alt="" />
+                                   <span class="label ms-2">02</span>
+                               </li>
+                               <li class="d-flex flex-wrap text-left flex-row align-items-center">
+                                   <img src="/content/dam/re-wanderlust/terrain-3.svg" alt="" />
+                                   <span class="label ms-2">Off-road</span>
+                               </li>
+                               <li class="d-flex flex-wrap text-left flex-row align-items-center">
+                                   <img src="/content/dam/re-wanderlust/Union 1.svg" alt="" />
+                                   <span class="label ms-2">Intermediate</span>
+                               </li>
+                           </ul>
+                           <div class="row">
+                               <div class="col-7 d-flex flex-wrap flex-column">
+                                   <span class="text-neutrak-light-grey operatedByLabel">Operated by</span>
+                                   <p>Rentrip tours pvt ltd</p>
+                               </div>
+                               <div class="col-5 d-flex flex-wrap flex-column">
+                                   <span class="text-neutrak-light-grey startedFromLabel">Starting
+                                       from</span>
+                                   <span class="priceLabel">₹2500</span>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="p-3 card-body__foot">
+                           <div class="row">
+                               <div class="col-6 pe-1">
+                                   <div class="button button__white-outline">
+                                       <button class="cmp-button">
+                                           <span class="cmp-text">Add to compare</span>
+                                       </button>
+                                   </div>
+                               </div>
+                               <div class="col-6 ps-1">
+                                   <div class="button button__primary-v2">
+                                       <button class="cmp-button position-relative rounded-0">
+                                           <span class="cmp-text">Book Now</span>
+                                           <span
+                                               class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                                       </button>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           {{/each}}
+       </div>
+       <!-- End Result Cards -->
+       {{/each}}
+    </script>
+    <!-- Handlebars template ends -->
+
+    <script id="tour_filter-duration" type="text/x-handlebars-template">
+        {{#each this.filter_data.duration}}
+        <div class="form-check d-flex flex-wrap position-relative">
+            <input class="form-check-input model_checkbox" name="tourDuration"
+                type="checkbox" value="{{this}}" id="CLASSIC 350">
+            <label class="form-check-label text-white" for="CLASSIC 350">{{this}}</label>
+        </div>
+        {{/each}}
+    </script>
+    
+    <script id="tour_filter-startPoint" type="text/x-handlebars-template">
+        {{#each this.filter_data.start_point}}
+        <div class="form-check d-flex flex-wrap position-relative">
+            <input class="form-check-input model_checkbox" name="startPoint"
+                type="checkbox" value="{{this}}" id="CLASSIC 350">
+            <label class="form-check-label text-white" for="CLASSIC 350">{{this.title}}</label>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="tour_filter-destination" type="text/x-handlebars-template">
+        {{#each this.filter_data.end_point}}
+        <div class="form-check d-flex flex-wrap position-relative">
+            <input class="form-check-input model_checkbox" name="endPoint"
+                type="checkbox" value="{{this}}" id="CLASSIC 350">
+            <label class="form-check-label text-white" for="CLASSIC 350">{{this.title}}</label>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="tour_filter-language" type="text/x-handlebars-template">
+        {{#each this.filter_data.languages}}
+        <div class="form-check d-flex flex-wrap position-relative">
+            <input class="form-check-input model_checkbox" name="languages"
+                type="checkbox" value="{{this}}" id="CLASSIC 350">
+            <label class="form-check-label text-white" for="CLASSIC 350">{{this}}</label>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="tour_filter-rating" type="text/x-handlebars-template">
+        {{#each this.filter_data.tour_rating}}
+        <div class="form-check d-flex flex-wrap position-relative">
+            <input class="form-check-input model_checkbox" name="tourRating"
+                type="checkbox" value="{{this}}" id="CLASSIC 350">
+            <label class="form-check-label text-white" for="CLASSIC 350">{{this}}</label>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="tour_filter-partners" type="text/x-handlebars-template">
+        {{#each this.filter_data.operator_id}}
+        <div class="form-check d-flex flex-wrap position-relative">
+            <input class="form-check-input model_checkbox" name="operatorId"
+                type="checkbox" value="{{value}}" id="CLASSIC 350">
+            <label class="form-check-label text-white" for="CLASSIC 350">{{this.name}}</label>
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="tour_filter-currency" type="text/x-handlebars-template">
+        {{#each this.filter_data.currency}}
+        <div class="form-check d-flex flex-wrap position-relative">
+            <input class="form-check-input model_checkbox" name="currency"
+                type="checkbox" value="{{this}}" id="CLASSIC 350">
+            <label class="form-check-label text-white" for="CLASSIC 350">{{this.[0]}}</label>
+        </div>
+        {{/each}}
+    </script>
+
+    <!-- Month and Year Datepicker Modal -->
+    <div class="modal monthYearPickerModal fade" id="monthYearPickerModal" tabindex="-1"
+        aria-labelledby="monthYearPickerModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-0 border-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="monthYearPickerModalLabel">${model.monthandYearLabel}</h5>
+                    <button type="button" class="btn-close calender-closeBtn bg-transparent text-white" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <span class="icon-close"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="tourSearchResultFormDate" data-date="01/25/2020"></div>
+                </div>
+                <div class="modal-footer border-0 d-flex flex-wrap justify-content-center">
+                    <div class="button button__primary-v2" style="min-width: 200px;">
+                        <button class="cmp-button position-relative rounded-0 calender-continue">
+                            <span class="cmp-text">Continue</span>
+                            <span
+                                class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Month and Year Datepicker Modal -->
+</div>
+
+</sly>

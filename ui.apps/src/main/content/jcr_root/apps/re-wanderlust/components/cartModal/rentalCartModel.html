@@ -1,0 +1,68 @@
+<div data-sly-template.Rental="${@ rental}" data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+  data-sly-test.anchorPath="${rental.anchorPath}">
+  <div class="cart-modal-comp cart-modal-comp-ga position-absolute top-50 translate-middle-y"
+    data-sly-test="${!rental.hideComponent}" data-errorMsg="${rental.notFound}">
+    <div class="cart-modal-comp__dropdown rentalcart" data-cartType="${rental.cartType}">
+      <button type="button"
+        class="btn bg-transparent position-relative border-0 rounded-0 p-0 cart-link d-flex flex-wrap align-items-center justify-content-center cart-icon-button">
+        <img class="cart-icon" src="${rental.imgForCartIcon}" alt="${rental.cartIconAltText}" />
+        <span
+          class="cart-icon-count rounded-circle position-absolute top-0 end-0 translate-middle font-size-3 d-flex flex-wrap justify-content-center align-items-center"></span>
+      </button>
+      <div class="teaser teaser__v4 pt-3 cart-modal-container" style="display: none">
+        <div class="col-md-12 cart-section position-relative p-0 font-black">
+          <div class="d-flex justify-content-end cart-close-icon">
+            <a href="#"><span class="icon-close pe-2 pt-1"></span></a>
+          </div>
+          <div class="d-flex justify-content-between cart-row px-4 pt-1 pb-3">
+            <p class="item-sel-count">
+              <span class="fw-bold cart-items"></span>${rental.selectionLabel}
+            </p>
+            <p class="item-sel-price mb-0">
+              ${rental.totalAmount}<span class="d-flex fw-bold subtotal-amount"></span>
+            </p>
+          </div>
+          <div class="bike-details-section cartValue py-1 px-4" data-pickUpDropFrom="${rental.pickUpAndDrop}"
+            data-dailyRateLabel="${rental.dailyRateLabel}" data-daysTotalLabel="${rental.daysTotalRateLabel}"
+            data-cartType="${rental.cartType}" data-deleteIconAltText="${rental.deleteIconAltText}"
+            data-imgForDeleteIcon="${rental.imgForDeleteIcon}" data-generateTokenAPIUrl="${rental.generateTokenAPIUrl}"
+            data-bookingSummaryAPI="${rental.bookingSummaryAPI}" data-apiTokenName="${rental.apiTokenName}"
+            data-apiHost="${rental.apiHost}" data-deleteBookingApi="${rental.deleteBookingApi}"
+            data-localCurrency="${rental.localCurrency}"></div>
+          <script id="cartvalue-template" type="text/x-handlebars-template">
+            {{#each data}}
+            <div class="d-flex justify-content-between cart-row py-3">
+                <div class="w-100">
+                    <div class="d-flex justify-content-between cart-item-title-wrap position-relative">
+                        <h5 class="fw-bold item-name">{{model}}</h5>
+                        <button type="button" class="cart-del-btn bg-transparent position-absolute top-0 end-0 cursor-pointer"
+                        data-quoteId="{{quoteId}}" id="{{sku}}" data-entityId="{{entityId}}" data-end_date="{{end_date}}">
+                            <img class="delete-icon" src="{{../imgForDeleteIcon}}" alt="{{../deleteIconAltText}}">
+                        </button>
+                    </div>
+                    <p class="mb-0 pick-drop-lbl">{{../pickAndDropLabel}}</p>
+                    <p class="mb-2 cart-loc">{{location}}</p>
+                    <p class="mb-2 cart-loc">{{{dateFormater start_date}}} <span class="mb-2 cart-loc">- {{{dateFormater end_date}}}</span></p>
+                    <div class="d-flex justify-content-between">
+                        <p class="cart-day-price">{{total_days}} {{../dayTotalLabel}} <span class="fw-semibold ">{{currency}} {{total_daysRate}}</span></p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+          </script>
+          <div class="w-100 px-4 py-4 view-edit-cart">
+            <div class="button button__primary-v2 cart-modal-proceedBtn-c">
+              <a role="button" href="${rental.anchorPath @ context='uri' , extension = 'html'}"
+                class="cmp-button d-block w-100 rounded-0 cart-modal-proceedBtn">
+                <span class="cmp-text cart-modal-proceedBtn-text">${rental.proceedBtnLabel}</span>
+                <span
+                  class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !anchorPath}"></sly>

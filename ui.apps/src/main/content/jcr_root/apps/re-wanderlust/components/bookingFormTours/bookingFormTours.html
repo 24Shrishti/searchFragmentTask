@@ -1,0 +1,446 @@
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<sly data-sly-use.model=com.re.wanderlust.core.models.BookingFormToursModel>
+    <div class="rew_bookingFormTours tour-bookingForm-comp" id=author-data>
+        <div class="container BookingFormDataAttribute"
+            data-riderLabel="${model.riderLabel}"
+            data-singleOccupancyLabel="${model.singleOccupancyLabel}"
+            data-doubleOccupancyLabel="${model.doubleOccupancyLabel}"
+            data-tripleOccupancyLabel="${model.tripleOccupancyLabel}"
+            data-addaddressfirstvalidation="${model.addAddressFirstValidation}"
+            data-addresssavedvalidation="${model.addressSavedValidation}"
+            data-apihost="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].apiBaseUrl}"
+            data-bookingattribute="${model.bookingAttribute}"
+            data-bookingsummaryapi="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].tourBookingSummaryApiUrl}"
+            data-cancellationpolicyapiurl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].cancellationPolicyAPIUrl}"
+            data-cartinfoapiurl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].cartInfoAPIUrl}"
+            data-currency="${caconfig['com.re.wanderlust.core.caconfig.APIKeysConfig'].currency}"
+            data-emergencycountrylist="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].emergencyCountryList}"
+            data-generatetokenapiurl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].generateTokenAPIUrl}"
+            data-getbillingaddressdetail="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].getBillingAddressDetail}"
+            data-gstdetailsapiurl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].gstDetailsAPIUrl}"
+            data-gstdetailsavedvalidation="${model.gstDetailSavedValidation}"
+            data-itemsaddtocart="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].itemsAddToCartAPIUrl}"
+            data-locality="${caconfig['com.re.wanderlust.core.caconfig.APIKeysConfig'].locality}"
+            data-loginredirectpath="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].loginRedirectPath}"
+            data-orderIdAPI="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].orderIdAPIUrl}"
+            data-paymentdescription="${model.paymentDescription}"
+            data-pincodeapi="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].pinCodeApi}"
+            data-promocodeapiurl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].promoCodeApiUrl}"
+            data-razorpayorderidapi="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].razorPayOrderId}"
+            data-relationitem="${model.relationItem}"
+            data-removetouritemapiurl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].getRemoveTourItem}"
+            data-ridedeletesuccessfullyvalidation="${model.rideDeleteSuccessfullyValidation}"
+            data-riderdetailsavedvalidation="${model.riderDetailSavedValidation}"
+            data-savebillingaddressurl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].addBillingAddress}"
+            data-saveriderinfourl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].saveTourRiderApiUrl}"
+            data-termsandconditionvalidation="${model.termsAndConditionValidation}"
+            data-tripdropdownurl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].tripDropDown}"
+            data-usercookiename="${caconfig['com.re.wanderlust.core.caconfig.CookieConfig'].userCookieName}"
+            data-userlogincookiename="${caconfig['com.re.wanderlust.core.caconfig.CookieConfig'].userLoginCookieName}"
+            data-vasbookingapi="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].vasBookingApi}"
+            data-razorpaykeyid="${caconfig['com.re.wanderlust.core.caconfig.APIKeysConfig'].razorpayKeyId}"
+            data-paymentDetailsAPIUrl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].paymentDetailsAPIUrl}">
+            <div class="row">
+                <!-- form container -->
+                <sly data-sly-use.bookingContainerTemplate="bookingContainer.html">
+                    <sly data-sly-call="${bookingContainerTemplate.BookingContainer @ bookingContainer = model}"></sly>
+                </sly>
+                <!-- form container end -->
+                <!-- billing address -->
+                <div class="col-lg-8 p-mb-0">
+                    <div class="accordion add-details accordion add-details py-3" id="add-billing-details">
+                        <div class="accordion-item rounded-0 border-0">
+                            <h2 class="accordion-header heading" id="billingDetail">
+                                <button class="accordion-button rounded-0 collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseBilling" aria-expanded="false"
+                                    aria-controls="#collapseBilling">
+                                    ${model.billingAddressLabel}
+                                    <div class="d-flex position-absolute ride-count">
+                                        <span class="icon-arrow-down"></span>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="collapseBilling" class="accordion-collapse collapse"
+                                aria-labelledby="billingDetail" data-bs-parent="#add-billing-details">
+                                <div class="accordion-body bg-black" id="billingAddress">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-12 pb-4">
+                                                <input type="text"
+                                                    class="form-control bg-transparent text-white rounded-0 billingAddress"
+                                                    id="addressLine" placeholder="${model.addressPlaceholder}"
+                                                    name="billingAddress">
+                                                <div class="error-msg pt-2 billingAddressValidation" hidden>
+                                                    ${model.addressValidation}</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 pb-4">
+                                                <input type="text"
+                                                    class="form-control bg-transparent text-white rounded-0 billingPincode"
+                                                    id="pinCode" placeholder="${model.pincodePlaceholder}"
+                                                    name="billingPincode">
+                                                <div class="error-msg pt-2 billingPinCodeValidation" hidden>
+                                                    ${model.pincodeValidation}</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 col-12 pb-4">
+                                                <select name="stateSelect" type="select"
+                                                    class="form-select bg-transparent text-white rounded-0 state">
+                                                    <option value="State">${model.statePlaceholder}</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 col-12 pb-4">
+                                                <select name="citySelect" type="select"
+                                                    class="form-select bg-transparent text-white rounded-0 city">
+                                                    <option value="City">${model.cityPlaceholder}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div class="row">
+                                        <div class="col-12 col-md-auto" style="min-width: 200px;">
+                                            <div class="button button__primary-v2">
+                                                <button class="cmp-button rounded-0 billingAddressButton">
+                                                    <span class="cmp-text">${model.submitCtaLabel}</span>
+                                                    <span
+                                                        class="cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center">
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- billing address end -->
+                <!-- gst invoice -->
+                <div class="col-lg-8 p-mb-0" data-sly-test="${model.showGst == 'true'}">
+                    <div class="accordion add-details" id="add-gst-details">
+                        <div class="accordion-item rounded-0 border-0" id="gstForm">
+                            <h2 class="accordion-header heading" id="gstDetail">
+                                <button class="accordion-button rounded-0 collapsed" type="button"
+                                    data-bs-toggle="collapse" aria-expanded="false" aria-controls="#collapseGst">
+                                    <label class="custom-check pe-5">
+                                        <label>${model.useGstDetail}</label>
+                                        <input type="checkbox" class="form-check-input gstFormCheckBox"
+                                            name="gstFormCheckBox" id="checkReading" data-check="disabled">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </button>
+                            </h2>
+                            <div id="collapseGst" class="accordion-collapse collapse" aria-labelledby="gstDetail"
+                                data-bs-parent="#add-gst-details">
+                                <div class="accordion-body bg-black">
+                                    <div class="row">
+                                        <div class="col-md-6 pb-4">
+                                            <label>${model.gstNumberLabel}</label>
+                                            <input type="text"
+                                                class="form-control rounded-0 bg-transparent text-white gstNumber gst"
+                                                id="gstNumber" name="gstNumber"
+                                                placeholder="${model.gstNumberPlaceholder}">
+                                            <div class="error-msg pt-2 gstNumberValidation" hidden>
+                                                ${model.gstNumberValidation}</div>
+                                        </div>
+                                        <div class="col-md-6 pb-4">
+                                            <label>${model.companyNameLabel}</label>
+                                            <input type="text"
+                                                class="form-control bg-transparent text-white rounded-0 companyName gst"
+                                                id="companyName" name="companyName"
+                                                placeholder="${model.companyNamePlaceholder}">
+                                            <div class="error-msg pt-2 companyNameValidation" hidden>
+                                                ${model.companyNameValidation}</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 pb-4">
+                                            <label>${model.addressLabel}</label>
+                                            <input type="address"
+                                                class="form-control bg-transparent text-white rounded-0 gstAddress gst"
+                                                id="address" name="address" placeholder="${model.addressPlaceholder}">
+                                            <div class="error-msg pt-2 gstAddressValidation" hidden>
+                                                ${model.addressValidation}</div>
+                                        </div>
+                                        <div class="col-md-6 pb-4">
+                                            <label>${model.pincodeLabel}</label>
+                                            <div class="d-flex">
+                                                <input type="text"
+                                                    class="form-control bg-transparent text-white rounded-0 gstPincode gst"
+                                                    id="pincode" placeholder="${model.pincodePlaceholder}"
+                                                    name="gstPincode">
+                                                <div class="d-flex">
+                                                    <button id="pincodeLocate"
+                                                        class="btn btn-primary w-100 rounded-0 locate bg-dark border-color">${model.pincodeCtaLabel}<span
+                                                            class="icon-arrow-r"></span></button>
+                                                </div>
+                                            </div>
+                                            <div class="error-msg pt-2 gstPincodeValidation" hidden>
+                                                ${model.pincodeValidation}</div>
+                                        </div>
+                                    </div>
+                                    <div class="row stateCity" hidden>
+                                        <div class="col-md-3 font-white">${model.stateLabel}<span
+                                                class="d-block py-2 stateForGst"></span></div>
+                                        <div class="col-md-3 font-white">${model.cityLabel}<span
+                                                class="d-block py-2 cityForGst"></span></div>
+                                    </div>
+                                    <p class="py-4">${model.extraInfoForGst}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="error-msg pt-2 addressSavedValidation" hidden>${model.addressSavedValidation}</div>
+                </div>
+                <!-- gst invoice end -->
+                <!-- inclusion and t_and_c -->
+                <div class="col-lg-8 p-mb-0">
+                    <div class="d-flex">
+                        <ul class="accessories ">
+                            <span class="text-decoration-underline pt-5 pb-3 d-block">${model.inclusionsLabel}</span>
+                            <li data-sly-repeat="${model.inclusionListItem}">${item}</li>
+                        </ul>
+                    </div>
+                    <div class="px-3 px-md-0">
+                        <div class="col-12 pb-4">
+                            <label class="custom-check">
+                                <label for="termsAndCondition">${model.termsAndCondition}</label>
+                                <input type="checkbox" class="form-check-input termsAndCondition"
+                                    name="termsAndCondition" id="termsAndCondition">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- cart -->
+                <div class="col-lg-4 p-mb-0">
+                    <div class="booking-summary position-relative">
+                        <div class="p-3 p-md-4">
+                            <div class=title>
+                                <div data-cmp-data-layer="{&quot;title-c6fe1860ab&quot;:{&quot;@type&quot;:&quot;core-components-examples/components/title&quot;,&quot;dc:title&quot;:&quot;Title&quot;}}"
+                                    id="title-c6fe1860ab" class="cmp-title">
+                                    <h4 class=cmp-title__text>${model.paymentTitle}</h4>
+                                </div>
+                            </div>
+                            <div class="py-3">
+                                <div class="input-group mb-3">
+                                    <input class="rounded-0 form-control promocodeInput" id="promoCode"
+                                        placeholder="${model.promocodePlaceholder}" type="promoCode">
+                                    <div class="button__white-outline">
+                                        <button class="rounded-0 cmp-button promocode px-4" type=submit>
+                                            <span class=cmp-text>${model.applyCtaLabel}</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="pt-2 error-msg successPromoValidation text-success" hidden>
+                                    ${model.successPromoValidation}</div>
+                                <div class="pt-2 error-msg failurePromoValidation" hidden>
+                                    ${model.failurePromoValidation}</div>
+                            </div>
+                            <div class="d-flex pt-2">
+                                <div class=col-md-6>${model.subtotalLabel}</div>
+                                <div class="col-md-6 text-end subtotal"></div>
+                            </div>
+                            <div class="pt-2 d-md-flex d-none">
+                                <p class="mb-0">${model.includeAllTaxLabel}</p>
+                            </div>
+                            <div class="d-flex pt-2">
+                                <div class="col-md-6 promocodeVal" hidden>${model.discountLabel}</div>
+                                <div class="col-md-6 text-end promocodeAmount" hidden></div>
+                            </div>
+                        </div>
+                        <div class="d-md-flex d-none flex-wrap border-top pt-4 px-4">
+                            <div class="col-md-6">${model.grandtotalLabel}</div>
+                            <div class="col-md-6 text-end grandTotal"></div>
+                        </div>
+                        <div class="d-md-flex d-none flex-wrap bg-neutrak-dark-grey p-3 p-md-4">
+                            <script
+                                src="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].razorPayUrl}"></script>
+                            <div class="col-12 button button__primary-v2"><button
+                                    class="rounded-0 cmp-button position-relative proceedToPay">
+                                    <span class="cmp-icon-before cmp-icon"></span>
+                                    <span class="cmp-text">${model.proceedToPayCtaLabel}</span>
+                                    <span
+                                        class="d-flex justify-content-center align-items-center bg-primary bottom-0 cmp-icon cmp-icon-after end-0 flex-wrap icon-arrow-r position-absolute text-white top-0"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal modal__checkPolicy text" id=checkPolicyPopup>
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="rounded-0 bg-dark modal-content">
+                    <div class=modal-header>
+                        <h4 class=modal-title id=business_name></h4>
+                        <button class="border-0 btn-close" type=button data-bs-dismiss=modal title=close><span
+                                class=icon-close></span></button>
+                    </div>
+                    <div class="modal-body" data-sly-set.value="${model.authoringFieldTours}">
+                        <h5 class=pb-3>${value.cancellationPolicy}</h5>
+                        <p class="color-light-color-font font-size-2 pb-4">${value.description @context='html'}</p>
+                        <div class="col-12 policy-data">
+                            <div class="d-flex py-2 px-3 bg-neutral-black-grey-base">
+                                <div class="color-light-color-font col-5 col-md-4">${value.timeFrameLabel}</div>
+                                <div class="color-light-color-font col-7 col-md-8">
+                                    ${value.cancellationAmountLabel}</div>
+                            </div>
+                            <div class="d-flex py-2 px-3">
+                                <div class="col-5 col-md-4"><span class=d-block>${value.betweenLabel}</span>
+                                    ${value.daysLessThanFirstWarningLabel}</div>
+                                <div class="col-7 col-md-8"><span class="text-white fs-6"
+                                        id=daysLessThanFirstWarningLabel></span>
+                                    ${value.bookingAmountLabel}</div>
+                            </div>
+                            <div class="d-flex py-2 px-3">
+                                <div class="col-5 col-md-4"><span class=d-block>${value.betweenLabel}</span>
+                                    ${value.daysLessThanSecondWarningLabel}</div>
+                                <div class="col-7 col-md-8"><span class="text-white fs-6"
+                                        id=daysLessThanSecondWarningLabel></span>
+                                    ${value.bookingAmountLabel}</div>
+                            </div>
+                            <div class="d-flex py-2 px-3">
+                                <div class="col-5 col-md-4"><span class=d-block>${value.betweenLabel}</span>
+                                    ${value.daysLessThanThirdWarningLabel}</div>
+                                <div class="col-7 col-md-8"><span class="text-white fs-6 col-7 col-md-8"
+                                        id=daysLessThanThirdWarningLabel></span>
+                                    ${value.bookingAmountLabel}</div>
+                            </div>
+                        </div>
+                        <!-- <div class="late-returns py-4">
+                            <h5 class=py-3>${model.lateReturnsLabel}</h5>
+                            <p class="color-light-color-font font-size-2 pb-4"
+                                data-sly-test="${value.lateReturnsLabel}">
+                                ${model.lateReturnsLabel}</p>
+                            <div class="col-12">
+                                <div class="d-flex">
+                                    <div class="col-3">
+                                        <span
+                                            class="color-light-color-font font-size-2 d-block">${model.lateReturnFirstWarningLabel}
+                                            <span
+                                                class="color-light-color-font font-size-2 d-block">${model.currencyType}<span
+                                                    id="lateReturnFirstWarningLabel"></span></span></span>
+                                    </div>
+                                    <div class="col-3">${model.lateReturnSecondWarningLabel} <span
+                                            class="color-light-color-font font-size-2 d-block">${model.currencyType}
+                                            <span id="lateReturnSecondWarningLabel"></span></span></div>
+                                    <div class="col-6">${model.lateReturnThirdWarningLabel} <span
+                                            class="color-light-color-font font-size-2 d-block">${model.currencyType}
+                                            <span id="lateReturnThirdWarningLabel"></span></span></div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="d-flex justify-content-center close-cancellation-modal col-12">
+                            <button class="rounded-0 bg-light btn submit" type="button" data-bs-dismiss="modal"
+                                id="closeCancellationPopup">${value.closeBtnLabel}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade modal__termsCondition" id="termsConditionModal" aria-hidden=true
+            aria-labelledby=termsConditionModalLabel tabindex=-1>
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="rounded-0 bg-dark modal-content border-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="termsConditionModalLabel">${model.tncModelTitle}</h5>
+                        <button class="text-white bg-transparent btn-close" type="button" data-bs-dismiss="modal"
+                            aria-label=Close><span class="icon-close"></span></button>
+                    </div>
+                    <div class="modal-body">${model.tncLongMessage @ context='html'}</div>
+                    <div class="modal-footer justify-content-center">
+                        <div class="button button__primary-v2 m-0" style=width:200px><button class=cmp-button
+                                type=button data-bs-dismiss=modal><span class=cmp-text>${model.tncModelBtnTitle}</span>
+                                <span
+                                    class="d-flex justify-content-center align-items-center bg-primary bottom-0 cmp-icon cmp-icon-after end-0 flex-wrap icon-arrow-r position-absolute text-white top-0"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><a class="sucessPagePath" hidden href="${model.successPagePath @ context='uri', extension='html'}"></a>
+    <a class=failedPagePath hidden href="${model.failedPagePath @ context='uri', extension='html'}"></a>
+    <div class="d-flex justify-content-center container">
+        <div class="d-flex py-2 bg-white col-md-3 justify-content-between px-1 ridersDetailPopup rounded-1">
+            <p class="font-black ps-3 text-center"><img alt="" class=pe-2 src=""><span class=message></span></p><a><span
+                    class="icon-close font-black font-size-2 pe-2"></span></a>
+        </div>
+    </div>
+
+    <div class="re-page-loaders" id="pageLoaders">
+        <div class="re-page-loader-inners">
+            <div class="fadein-elements">
+                <img alt="Royal Enfield"
+                    src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-01.svg">
+                <img alt="Royal Enfield"
+                    src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-02.svg">
+                <img alt="Royal Enfield"
+                    src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-03.svg">
+                <img alt="Royal Enfield"
+                    src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-04.svg">
+                <img alt="Royal Enfield"
+                    src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-05.svg">
+            </div>
+            <div class="loading-ellipsiss">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Something went wrong Modal-->
+    <div class="modal modal__checkPolicy" id="errorPopupTour">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark rounded-0">
+                <!-- Modal Header -->
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h3 class="pb-3">${model.apiErrorMessage}</h3>
+                    <p>${model.apiErrorMessageDescription}</p>
+                </div>
+                <div class="px-3">
+                    <div class="row">
+                        <div class="col-12 col-md-auto py-4">
+                            <div class="button">
+                                <a href="${model.goBackRedirectionPath @ context='uri', extension='html' }"
+                                    title="${model.goBackCtaLabel}"
+                                    class="cmp-button text-decoration-none rounded-0 bg-transparent text-white border-primary">
+                                    <span class="cmp-text">${model.goBackCtaLabel}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal-->
+
+        <!---no booking found -->
+        <div class="col-12 text-center noBookingFound bg-dark py-5 px-3 noBookingTour">
+            <div class="d-flex flex-wrap justify-content-center mb-4">
+                <img src="${model.bookTripImg}" alt="${model.bookTripLabel}" width="50px" />
+            </div>
+            <h4 class="mb-3">${model.bookTripLabel}</h4>
+            <p class="mb-4">${model.bookTripParagraph}</p>
+            <div class="row justify-content-center">
+                <div class="col-8 col-md-5 col-lg-4 col-xl-2">
+                    <div class="button button__primary-v2">
+                        <a href="${model.bookTripCtaLink @ context='uri', extension='html'}"
+                            class="cmp-button d-inline-block position-relative rounded-0 ride">
+                            <span class="cmp-text">${model.bookTripCtaLabel}</span>
+                            <span
+                                class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---no booking found end-->
+</sly>

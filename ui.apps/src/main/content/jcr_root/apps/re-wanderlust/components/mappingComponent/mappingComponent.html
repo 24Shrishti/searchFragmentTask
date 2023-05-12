@@ -1,0 +1,93 @@
+<sly data-sly-use.model="com.re.wanderlust.core.models.MappingModel">
+  <sly
+    data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}"
+  >
+    <sly
+      data-sly-call="${clientLib.all @ categories='coralui3'}"
+      data-sly-unwrap
+    ></sly>
+
+    <coral-alert size="L" varient="help">
+      <coral-alert-header>Config : Please specify mappings</coral-alert-header>
+    </coral-alert>
+
+    <table
+      is="coral-table"
+      data-sly-test="${model.mappingType == 'travelPermit'}"
+    >
+      <thead is="coral-table-head">
+        <tr is="coral-table-head">
+          <th is="coral-table-headcell">State Permissions API Value</th>
+
+          <th is="coral-table-headcell">Rendered Value</th>
+        </tr>
+      </thead>
+
+      <tbody
+        divider="cell"
+        is="coral-table-body"
+        data-sly-list="${model.itemMapping}"
+      >
+        <tr is="coral-table-head">
+          <th is="coral-table-headcell">${item}</th>
+
+          <th is="coral-table-headcell">${model.itemMapping[item]}</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <table is="coral-table" data-sly-test="${model.mappingType == 'bikeImage'}">
+      <thead is="coral-table-head">
+        <tr is="coral-table-head">
+          <th is="coral-table-headcell">Bikes's Name</th>
+
+          <th is="coral-table-headcell">Desktop Image</th>
+
+          <th is="coral-table-headcell">Mobile Image</th>
+        </tr>
+      </thead>
+
+      <tbody
+        divider="cell"
+        is="coral-table-body"
+        data-sly-list="${model.itemMapping}"
+      >
+        <tr is="coral-table-head">
+          <th is="coral-table-headcell">${item}</th>
+
+          <th is="coral-table-headcell">
+            ${model.itemMapping[item].desktopImage}
+          </th>
+
+          <th is="coral-table-headcell">
+            ${model.itemMapping[item].desktopImage}
+          </th>
+        </tr>
+      </tbody>
+    </table>
+
+    <table
+      is="coral-table"
+      data-sly-test="${model.mappingType == 'currencyMapping'}"
+    >
+      <thead is="coral-table-head">
+        <tr is="coral-table-head">
+          <th is="coral-table-headcell">Currency Api Value</th>
+
+          <th is="coral-table-headcell">Rendered Value</th>
+        </tr>
+      </thead>
+
+      <tbody
+        divider="cell"
+        is="coral-table-body"
+        data-sly-list="${model.itemMapping}"
+      >
+        <tr is="coral-table-head">
+          <th is="coral-table-headcell">${item}</th>
+          <th is="coral-table-headcell">${model.itemMapping[item]}</th>
+        </tr>
+      </tbody>
+    </table>
+  </sly>
+</sly>

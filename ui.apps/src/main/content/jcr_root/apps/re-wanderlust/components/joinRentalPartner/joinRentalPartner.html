@@ -1,0 +1,44 @@
+<div class="join-rental-partner-comp position-relative" data-sly-test="${!model.hideComponent}">
+    <div class="join-rental-partner-comp__bg position-absolute top-0 end-0 bottom-0 start-0">
+        <sly data-sly-resource="${'joinRentalPartnerBg' @ resourceType='/apps/re-wanderlust/components/image'}"></sly>
+    </div>
+    <div class="join-rental-partner-comp__content position-relative">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 col-xl-11 mb-5">
+                    <div class="join-rental-partner-comp__title">
+                        <sly
+                            data-sly-resource="${'joinRentalPartnerTitle' @ resourceType='/apps/re-wanderlust/components/text'}">
+                        </sly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container join-rental-partner-comp__content-container">
+            <div class="row join-rental-partner-comp__content-teasers-grid">
+                <sly data-sly-resource="${'content' @ resourceType='wcm/foundation/components/parsys'}"></sly>
+            </div>
+            <div class="join-rental-partner-comp__content-container-foot d-flex flex-wrap justify-content-between">
+                <div class="col-md-8 d-flex flex-wrap">
+                    <div class="button button__white-outline me-3">
+                        <sly
+                            data-sly-resource="${'joinRentalPartnerCTA' @ resourceType='/apps/re-wanderlust/components/button'}">
+                        </sly>
+                    </div>
+                    <div class="button button__white-outline">
+                        <sly
+                            data-sly-resource="${'startListingCTA' @ resourceType='/apps/re-wanderlust/components/button'}">
+                        </sly>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex flex-wrap justify-content-end">
+                    <div class="button button__white-link">
+                        <sly
+                            data-sly-resource="${'existingUserCta' @ resourceType='/apps/re-wanderlust/components/button'}">
+                        </sly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

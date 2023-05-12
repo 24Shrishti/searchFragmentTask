@@ -1,0 +1,37 @@
+{
+  "alternateBooking":
+  {
+    "jcr:primaryType":"nt:unstructured",
+    "jcr:createdBy":"admin",
+    "description":"SampleDescription",
+    "cancelLabel":"CancelledBooking",
+    "bookingMadeWithLabel":"BookingMadeWithLabel",
+    "jcr:lastModifiedBy":"admin",
+    "serverError":"500 Error Block",
+    "warningIcon":"/content/dam/re-wanderlust/asset.jpg",
+    "badRequest":"400 Error Block",
+    "bookingIdLabel":"BookingIdLabel",
+    "jcr:created":"ThuSep15202213:33:53GMT+0530",
+    "title":"Title",
+    "bookingWithLabel":"BookingWithLabel",
+    "bookingType":"rental",
+    "cancelMsg":"CancelReasonMsg",
+    "jcr:lastModified":"ThuSep15202213:34:39GMT+0530",
+    "sling:resourceType":"re-wanderlust/components/alternateBooking",
+    "notFound":"404 Error Block",
+    "greetingText": "greeting",
+    "travelPermittedLabel": "travel permitted",
+    "approxKmLabel": "approx km",
+    "unavailableLabel": "Unavailable",
+    "customizationLabel": "Customization",
+    "confirmBookingText": "Confirm Booking",
+    "bookingUpdateLabel": "Booking Update",
+    "dateLabel": "date",
+    "callIcon": "callIcon",
+    "rateLabel": "rate",
+    "yearLabel": "year",
+    "confirmBookingUrl": "/content/we-retail/us/en/experience",
+    "ageLabel": "age",
+    "cancelLink":"/content/we-retail/us/en/experience"
+  }
+}

@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Booking Form"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <bookingFormLabel
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Booking Form Label"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <welcomeTitleLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the welcome title for cart."
+                                                fieldLabel="Welcome Title Label"
+                                                name="./welcomeTitleLabel"/>
+                                            <bookingSeriesLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for booking series."
+                                                fieldLabel="Booking Series Label"
+                                                name="./bookingSeriesLabel"/>
+                                            <daysTotalLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for total days"
+                                                fieldLabel="Days Total Label"
+                                                name="./daysTotalLabel"/>
+                                            <returnPolicyLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for return policy."
+                                                fieldLabel="Return Policy Label"
+                                                name="./returnPolicyLabel"/>
+                                            <addRiderDetailLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label add rider detail."
+                                                fieldLabel="Add Rider Detail Label"
+                                                name="./addRiderDetailLabel"/>
+                                            <rideSeriesLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for ride series."
+                                                fieldLabel="Ride Series Label"
+                                                name="./rideSeriesLabel"/>
+                                            <emergencyContactDetailLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for emergency contact."
+                                                fieldLabel="Emergency Contact Detail Label"
+                                                name="./emergencyContactDetailLabel"/>
+                                            <emergencyUseForAllRider
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for emergency use for all rider."
+                                                fieldLabel="Emergency Use For All Rider"
+                                                name="./emergencyUseForAllRider"/>
+                                            <valueAddedServiceLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for value added services."
+                                                fieldLabel="Value Added Service Label"
+                                                name="./valueAddedServiceLabel"/>
+                                            <valueAddedServiceDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Enter the description for value added services."
+                                                fieldLabel="Value Added Service Description"
+                                                name="./valueAddedServiceDescription"/>
+                                            <riderAccessoriesLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for rider accessories."
+                                                fieldLabel="Rider Accessories Label"
+                                                name="./riderAccessoriesLabel"/>
+                                            <motorcycleAccessoriesLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for motorcycle accessories."
+                                                fieldLabel="Motorcycle Accessories Label"
+                                                name="./motorcycleAccessoriesLabel"/>
+                                            <billingAddressLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for billing address."
+                                                fieldLabel="Billing Address Label"
+                                                name="./billingAddressLabel"/>
+                                            <billingAddressPolicy
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the billing address policy."
+                                                fieldLabel="Billing Address Policy"
+                                                name="./billingAddressPolicy"/>
+                                            <useGstDetail
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for use gst detail."
+                                                fieldLabel="Use Gst Detail Label"
+                                                name="./useGstDetail"/>
+                                            <gstNumberLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for gst number."
+                                                fieldLabel="GST Number Label"
+                                                name="./gstNumberLabel"/>
+                                            <addressLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for address."
+                                                fieldLabel="Address Label"
+                                                name="./addressLabel"/>
+                                            <pincodeLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for pincode."
+                                                fieldLabel="Pincode Label"
+                                                name="./pincodeLabel"/>
+                                            <cityLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for city."
+                                                fieldLabel="City Label"
+                                                name="./cityLabel"/>
+                                            <stateLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for state."
+                                                fieldLabel="state Label"
+                                                name="./stateLabel"/>
+                                            <extraInfoForGst
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the extra info for gst data saving."
+                                                fieldLabel="Extra Info For Gst"
+                                                name="./extraInfoForGst"/>
+                                            <inclusionsLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for inclusions."
+                                                fieldLabel="Inclusions Label"
+                                                name="./inclusionsLabel"/>
+                                            <inclusionDetail
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    fieldLabel="Inclusion's"
+                                                    name="./inclusionList">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <inclusion
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Enter the inclusion for rider"
+                                                            fieldLabel="Enter Inclusion Detail"
+                                                            name="./inclusion"/>
+                                                    </items>
+                                                </field>
+                                            </inclusionDetail>
+                                            <relationDetail
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                composite="{Boolean}true"
+                                                fieldLabel="Relation's">
+                                                <field
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                    fieldLabel="Relation's"
+                                                    name="./relationList">
+                                                    <items jcr:primaryType="nt:unstructured">
+                                                        <relationWithRider
+                                                            jcr:primaryType="nt:unstructured"
+                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                            fieldDescription="Enter the relation for rider"
+                                                            fieldLabel="Enter Relation"
+                                                            name="./relationWithRider"/>
+                                                    </items>
+                                                </field>
+                                            </relationDetail>
+                                            <termsAndCondition
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Enter the term and condition."
+                                                fieldLabel="Terms and Condition"
+                                                name="./termsAndCondition"/>
+                                            <paymentTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the payment tile."
+                                                fieldLabel="Payment Title Label"
+                                                name="./paymentTitle"/>
+                                            <subtotalLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the payment tile."
+                                                fieldLabel="subtotal Label"
+                                                name="./subtotalLabel"/>
+                                            <grandTotalLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the payment tile."
+                                                fieldLabel="subtotal Label"
+                                                name="./grandtotalLabel"/>
+                                            <includeAllTaxLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for Include All Taxes."
+                                                fieldLabel="Include All Taxes Label"
+                                                name="./includeAllTaxLabel"/>
+                                            <discountLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for Discount Field."
+                                                fieldLabel="Discount Label"
+                                                name="./discountLabel"/>
+                                            <bookTripLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for book ride/trip."
+                                                fieldLabel="Book Trip Label"
+                                                name="./bookTripLabel"/>
+                                            <successPagePath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Enter the Payment Success Page Path."
+                                                fieldLabel="Success Page Path"
+                                                name="./successPagePath"
+                                                rootPath="/content/royal-enfield"/>
+                                            <failedPagePath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Enter the payment failed page path."
+                                                fieldLabel="Payment Failed Page Path"
+                                                name="./failedPagePath"
+                                                rootPath="/content/royal-enfield"/>
+                                            <paymentDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of payment description."
+                                                fieldLabel="Payment Description Text"
+                                                name="./paymentDescription"/>
+                                            <showGst
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                                fieldDescription="Check if you want to show Gst Detail"
+                                                name="./showGst"
+                                                text="Show Gst Detail"
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <ChooseYourPreferedDaresLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for choose your prefereed dates"
+                                                fieldLabel="Choose Your Preferred Dates"
+                                                name="./chooseYourPreferredDates"/>
+                                            <ridePreferenceLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for ride preference label"
+                                                fieldLabel="Choose Ride Preference Label"
+                                                name="./ridePreferenceLabel"/>
+                                            <accommodationTypeLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label Accommodation type label"
+                                                fieldLabel="Choose Accommodation Type Label"
+                                                name="./accommodationTypeLabel"/>
+                                            <operatedByLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the operated By label"
+                                                fieldLabel="Choose  Operated By Label "
+                                                name="./operatedByLabel"/>
+                                            <singleRiderLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the Single Rider Label"
+                                                fieldLabel="Single Rider Label"
+                                                name="./singleRiderLabel"/>
+                                            <riderWithPillionLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the Rider with Pillion Label"
+                                                fieldLabel="Rider With Pillion Label"
+                                                name="./riderWithPillionLabel"/>
+                                            <iHaveMyOwnRideLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the i have my own ride label"
+                                                fieldLabel="I Have My Own Ride Label"
+                                                name="./iHaveMyOwnRideLabel"/>
+                                            <currency
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the currency symbol"
+                                                fieldLabel="currency symbol"
+                                                name="./currency"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </bookingFormLabel>
+                    <placeholder
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Placeholder's"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <fullNamePlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for full Name."
+                                                fieldLabel="Full Name Placeholder"
+                                                name="./fullNamePlaceholder"
+                                                required="{Boolean}true"/>
+                                            <emailIdPlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for email Id"
+                                                fieldLabel="Email Id Placeholder"
+                                                name="./emailIdPlaceholder"
+                                                required="{Boolean}true"/>
+                                            <mobileNumberPlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for mobile number."
+                                                fieldLabel="Mobile Number Placeholder"
+                                                name="./mobileNumberPlaceholder"
+                                                required="{Boolean}true"/>
+                                            <selectCountryPlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for select country."
+                                                fieldLabel="Select Country Placeholder"
+                                                name="./selectCountryPlaceholder"
+                                                required="{Boolean}true"/>
+                                            <addressPlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for address."
+                                                fieldLabel="Address Placeholder"
+                                                name="./addressPlaceholder"
+                                                required="{Boolean}true"/>
+                                            <statePlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for state."
+                                                fieldLabel="state Placeholder"
+                                                name="./statePlaceholder"
+                                                required="{Boolean}true"/>
+                                            <cityPlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for state."
+                                                fieldLabel="city Placeholder"
+                                                name="./cityPlaceholder"
+                                                required="{Boolean}true"/>
+                                            <pincodePlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for pincode."
+                                                fieldLabel="Pincode Placeholder"
+                                                name="./pincodePlaceholder"
+                                                required="{Boolean}true"/>
+                                            <gstNumberPlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for gst number."
+                                                fieldLabel="GST Number Placeholder"
+                                                name="./gstNumberPlaceholder"
+                                                required="{Boolean}true"/>
+                                            <companyNamePlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for comapny name."
+                                                fieldLabel="Company Name Placeholder"
+                                                name="./companyNamePlaceholder"
+                                                required="{Boolean}true"/>
+                                            <promocodePlaceholder
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the placeholder for promocode."
+                                                fieldLabel="Promocode Placeholder"
+                                                name="./promocodePlaceholder"
+                                                required="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </placeholder>
+                    <validation
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Validation Messages"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <nameValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for name."
+                                                fieldLabel="Name Validation Message"
+                                                name="./nameValidation"/>
+                                            <emailIdPlace
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for email id."
+                                                fieldLabel="Email Id Validation Message"
+                                                name="./emailIdValidation"/>
+                                            <mobileValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for mobile number."
+                                                fieldLabel="Mobile Number Validation Message"
+                                                name="./mobileValidation"/>
+                                            <countryValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message select valid country."
+                                                fieldLabel="Add Country Validation"
+                                                name="./countryValidation"/>
+                                            <pincodeValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for Pincode."
+                                                fieldLabel="Pincode Validation Message"
+                                                name="./pincodeValidation"/>
+                                            <addressValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for Address."
+                                                fieldLabel="Address Validation Message"
+                                                name="./addressValidation"/>
+                                            <gstNumberValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for GST."
+                                                fieldLabel="Gst Number Validation Message"
+                                                name="./gstNumberValidation"/>
+                                            <companyNameValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for company name."
+                                                fieldLabel="Company Name Validation Message"
+                                                name="./companyNameValidation"/>
+                                            <sameMobileValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for same mobile number."
+                                                fieldLabel="Mobile Number Same Validation Message"
+                                                name="./sameMobileValidation"/>
+                                            <relationValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for relation."
+                                                fieldLabel="Relation Validation"
+                                                name="./relationValidation"/>
+                                            <termsAndConditionValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message Terms and Condition."
+                                                fieldLabel="Terms And Condition Validation"
+                                                name="./termsAndConditionValidation"/>
+                                            <checkRiderDetailValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for all rider saved their info."
+                                                fieldLabel="Check Rider Detail Validation"
+                                                name="./checkRiderDetailValidation"/>
+                                            <addressSavedValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for billing address is saved or not."
+                                                fieldLabel="Address Saved Validation"
+                                                name="./addressSavedValidation"/>
+                                            <riderDetailSavedValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for rider deatil saved."
+                                                fieldLabel="Rider Detail Saved Validation"
+                                                name="./riderDetailSavedValidation"/>
+                                            <rideDeleteSuccessfullyValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for delete ride succesfully"
+                                                fieldLabel="Rider Delete Sucessfully Validation"
+                                                name="./rideDeleteSuccessfullyValidation"/>
+                                            <addAddressFirstValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for saved billing address first."
+                                                fieldLabel="Add Billing Address First Validation"
+                                                name="./addAddressFirstValidation"/>
+                                            <gstDetailSavedValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for gst detail saved successfully"
+                                                fieldLabel="GST Detail Saved Validation"
+                                                name="./gstDetailSavedValidation"/>
+                                            <successPromoValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the Success PromoCode Validation Message."
+                                                fieldLabel="Add Success PromoCode Validation Message"
+                                                name="./successPromoValidation"/>
+                                            <failurePromoValidation
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the Faliure PromoCode Validation Message."
+                                                fieldLabel="Add Faliure PromoCode Validation Message"
+                                                name="./failurePromoValidation"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </validation>
+                    <buttonAction
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="CTA Button Action"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <saveRiderInfoCtaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for save ride info."
+                                                fieldLabel="Save Rider Info CTA Label"
+                                                name="./saveRiderInfoCtaLabel"/>
+                                            <addAnotherRideCtaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for add another ride."
+                                                fieldLabel="Add Another Ride CTA Label"
+                                                name="./addAnotherRideCtaLabel"/>
+                                            <addAnotherRideCtaLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Enter the link for add another ride."
+                                                fieldLabel="Add Another Ride CTA Link"
+                                                name="./addAnotherRideCtaLink"
+                                                rootPath="/content/royal-enfield"/>
+                                            <bookTripCtaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for add book trip."
+                                                fieldLabel="Add Book Trip CTA Label"
+                                                name="./bookTripCtaLabel"/>
+                                            <bookTripCtaLink
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Enter the link for add book trip."
+                                                fieldLabel="Add Book Trip CTA Link"
+                                                name="./bookTripCtaLink"
+                                                rootPath="/content/royal-enfield"/>
+                                            <submitCtaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for Submit."
+                                                fieldLabel="Submit CTA Label"
+                                                name="./submitCtaLabel"/>
+                                            <pincodeCtaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for pincode."
+                                                fieldLabel="Pincode CTA Label"
+                                                name="./pincodeCtaLabel"/>
+                                            <applyCtaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for apply."
+                                                fieldLabel="Apply CTA Label"
+                                                name="./applyCtaLabel"/>
+                                            <proceedToPayCtaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for proceed to pay."
+                                                fieldLabel="Proceed To Pay CTA Label"
+                                                name="./proceedToPayCtaLabel"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </buttonAction>
+                    <icon
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Icon"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <deleteIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Enter the Icon for Delete Icon."
+                                                fieldLabel="Add Delete Icon"
+                                                name="./deleteIcon"
+                                                rootPath="/content/dam"/>
+                                            <locationIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Enter the Icon for location Icon."
+                                                fieldLabel="Add Location Icon"
+                                                name="./locationIcon"
+                                                rootPath="/content/dam"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </icon>
+                    <errorLabels
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="re-wanderlust/components/commonFields/errorLabels"/>
+                    <cancellationPolicy
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/include"
+                        path="re-wanderlust/components/commonFields/cancellationPolicy"/>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

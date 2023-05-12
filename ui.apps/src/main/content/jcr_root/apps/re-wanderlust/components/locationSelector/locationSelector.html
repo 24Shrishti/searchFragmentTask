@@ -1,0 +1,21 @@
+<sly data-sly-use.model="com.re.wanderlust.core.models.LocationSelectorModel" data-sly-use.templates="core/wcm/components/commons/v1/templates.html" data-sly-test.locationIconImage=${model.locationIconImage}>
+    <div class="rew-locationSelector ${model.hideComponent ? 'd-none' : ''}"  data-getIpAddress="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].getIpAddressAPIUrl}" data-ipStackApiKey="${caconfig['com.re.wanderlust.core.caconfig.APIKeysConfig'].ipStackApiKey}" data-googlePlaceApiUrl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].googlePlaceAPIUrl}"
+        data-googleApiKey="${caconfig['com.re.wanderlust.core.caconfig.APIKeysConfig'].googleMapAPIKey}" data-currentLatKey="${caconfig['com.re.wanderlust.core.caconfig.LocalStorageKeysConfig'].currentLatKey}" data-currentLongKey="${caconfig['com.re.wanderlust.core.caconfig.LocalStorageKeysConfig'].currentLongKey}"
+        data-updatedLatKey="${caconfig['com.re.wanderlust.core.caconfig.LocalStorageKeysConfig'].updatedLatKey}" data-updatedLongKey="${caconfig['com.re.wanderlust.core.caconfig.LocalStorageKeysConfig'].updatedLongKey}" data-badRequestError="${model.badRequest}"
+        data-serverError="${model.serverError}" data-notFoundErr="${model.notFound}" data-googleAutoCompleteSearchReason="${caconfig['com.re.wanderlust.core.caconfig.APIKeysConfig'].googleAutoCompleteSearchReason}" data-defaultLocationName="${model.defaultLocationName}"
+        data-defaultLocationLat="${model.defaultLocationLat}" data-defaultLocationLong="${model.defaultLocationLong}">
+        <div class="location-selector-comp">
+            <form class="search-box2 ">
+                <div class="position-relative col-md-8 col-lg-6 mx-auto  location-selector-container">
+                    <span class="icon-search position-absolute top-0 start-0 buttom-0"></span>
+                    <input id="searchTextField" type="text" size="50" class="form-control bg-transparent rounded-0" placeholder="${model.locationPlaceholder}" autocomplete="on" runat="server"/>
+                    <input type="hidden" id="city2" name="city2"/>
+                    <input type="hidden" id="cityLat" name="cityLat"/>
+                    <input type="hidden" id="cityLng" name="cityLng"/>
+                   
+                </div>
+            </form>
+        </div>
+    </div>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !locationIconImage}"></sly>

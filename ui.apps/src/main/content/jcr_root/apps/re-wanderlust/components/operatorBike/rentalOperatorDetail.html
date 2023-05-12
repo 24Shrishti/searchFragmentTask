@@ -1,0 +1,578 @@
+<div data-sly-template.Rental="${@ rental}">
+<div data-sly-test.chk="${rental.operatorDetailEntityList.size == 0}">${rental.errorMsg}</div>
+
+<div data-sly-test="${!chk}">
+    <div data-sly-list.val="${rental.operatorDetailEntityList}">
+        <div class="container-fluid bg-dark-black operator-banner-comp g-0 p-0">
+            <div class="container-fluid g-0">
+                <div class="banner-bg" data-sly-test.bannerImg=${val.operatorImage}>
+                    <picture>
+                        <source class="mobile w-100" id="bannerMobileImg" srcset="${val.operatorImage}"
+                            media="(max-width: 767px)">
+                        <img class="bg w-100 bannerDesktopImg" srcset="${val.operatorImage}" alt="" title="">
+
+                    </picture>
+                </div>
+
+                <div class="banner-bg" data-sly-test=${!bannerImg}>
+                    <picture>
+                        <source class="mobile w-100 bannerMobileImg" srcset="${rental.defaultOperatorBanner}"
+                            media="(max-width: 767px)">
+                        <img class="bg w-100" id="bannerDesktopImg" srcset="${rental.defaultOperatorBanner}"
+                            alt="" title="">
+
+                    </picture>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-md-flex justify-content-between py-4">
+                        <div class="neel-rentals">
+                            <h4>${val.name}</h4>
+                            <div class="reviews pt-2">
+                                <span class="pe-1 d-inline-flex"><img src="${rental.starIcon}"
+                                        alt=""></span>${val.rating}<span> (${val.totalReviews}
+                                    ${rental.reviewsLabel})</span>
+                            </div>
+                        </div>
+                        <div class="d-flex pt-4 pt-md-0 rental-grid-wrap align-self-start">
+                            <div
+                                class="neel-rentals-desc-grid d-flex col-4 position-relative align-items-start">
+                                <img src="${rental.fleetIcon}" alt="">
+                                <div class="d-block ps-2 ps-md-3">
+                                    <p class="font-size-1">${val.fleetSize}</p>
+                                    <span class="font-size-3 d-inline-block">${rental.fleetLabel}</span>
+                                </div>
+                            </div>
+                            <div
+                                class="neel-rentals-desc-grid d-flex col-4 position-relative align-items-start">
+                                <img src="${rental.modelIcon}" alt="">
+                                <div class="d-block ps-2 ps-md-3">
+                                    <p class="font-size-1">${val.reModel}</p>
+                                    <span class="font-size-3 d-inline-block">${rental.modelLabel}</span>
+                                </div>
+                            </div>
+                            <div
+                                class="neel-rentals-desc-grid d-flex col-4 position-relative align-items-start">
+                                <img src="${rental.locationIcon}" alt="">
+                                <div class="d-block ps-2 ps-md-3">
+                                    <p class="font-size-1">
+                                        ${val.location}
+                                    </p>
+                                    <span class="font-size-3 d-inline-block">${rental.locationLabel}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-md-flex justify-content-between check-policy">
+                        <div class="col-12 col-md-6 font-size-2 open-modal" data-bs-toggle="modal"
+                            data-bs-target="#valueAddedServicesModal"><span>${rental.valueAddedPopUpLabel}</span>
+                        </div>
+                        <div class="col-12 col-md-6 font-size-2 open-modal" data-bs-toggle="modal"
+                            data-bs-target="#checkPolicy"><span>${rental.cancellationPolicyTitleLabel}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- The check policy modala -->
+            <div class="modal modal__checkPolicy" id="checkPolicy">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-dark rounded-0">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">${val.name}</h4>
+                            <button type="button" class="btn-close border-0" data-bs-dismiss="modal">
+                                <span class="icon-close"></span>
+                            </button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body"
+                            data-sly-repeat.cancellationPolicyEntity="${val.cancellationPolicyEntity}">
+                            <h5 class="pb-3">${rental.cancellationPolicyTitleLabel}</h5>
+                            <p class="pb-4 font-size-2 color-light-color-font">
+                                ${rental.cancellationPolicyDescription}
+                            </p>
+                            <div class="col-12 policy-data">
+                                <div class="d-flex  py-2 px-3 bg-neutral-black-grey-base">
+                                    <div class="col-5 col-md-4 color-light-color-font">
+                                        ${rental.timeFrameHeaderLabel}
+                                    </div>
+                                    <div class="col-7 col-md-8 color-light-color-font">
+                                        ${rental.cancellationAmountHeaderLabel}
+                                    </div>
+                                </div>
+                                <div class="d-flex py-2 px-3">
+                                    <div class="col-5 col-md-4"><span
+                                            class="d-block">${rental.betweenLabel}</span>${cancellationPolicyEntity.atMostDays}
+                                        ${rental.moreDaysLabel}
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        ${cancellationPolicyEntity.atMostDaysIntervalCharge}${rental.amountPercentageSymbol}
+                                        ${rental.cancellationAmountLabel}
+                                    </div>
+                                </div>
+                                <div class="d-flex py-2 px-3">
+                                    <div class="col-5 col-md-4"><span
+                                            class="d-block">${rental.betweenLabel}</span>${cancellationPolicyEntity.fromDays}
+                                        ${rental.toLabel} ${cancellationPolicyEntity.toDays} ${rental.daysLabel}
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        ${cancellationPolicyEntity.secondIntervalOfDaysCharges}${rental.amountPercentageSymbol}
+                                        ${rental.cancellationAmountLabel}
+                                    </div>
+                                </div>
+                                <div class="d-flex py-2 px-3">
+                                    <div class="col-5 col-md-4"><span
+                                            class="d-block">${rental.betweenLabel}</span>
+                                        ${cancellationPolicyEntity.firstIntervalOfDays} ${rental.daysLabel}
+                                    </div>
+                                    <div class="col-7 col-md-8">
+                                        ${cancellationPolicyEntity.firstIntervalOfDaysCharges}${rental.amountPercentageSymbol}
+                                        ${rental.cancellationAmountLabel}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="late-returns py-4">
+                                <h5 class="py-3">${rental.lateReturnLabel}</h5>
+                                <p class="pb-4 font-size-2 color-light-color-font"
+                                    data-sly-test="${rental.lateReturnNote}">${rental.lateReturnNote}</p>
+                                <div class="col-12">
+                                    <div class="d-flex">
+                                        <div class="col-3"><span
+                                                class="d-block font-size-2 color-light-color-font">${rental.lateReturnFirstWarningLabel}</span>
+                                            ${cancellationPolicyEntity.currency}
+                                            ${cancellationPolicyEntity.firstHoursIntervalCharge}
+                                        </div>
+                                        <div class="col-3"><span
+                                                class="d-block font-size-2 color-light-color-font">${rental.lateReturnSecondWarningLabel}</span>
+                                            ${cancellationPolicyEntity.currency}
+                                            ${cancellationPolicyEntity.secondHoursIntervalCharge}
+                                        </div>
+                                        <div class="col-6"><span
+                                                class="d-block font-size-2 color-light-color-font">${rental.lateReturnThirdWarningLabel}</span>
+                                            ${cancellationPolicyEntity.currency}
+                                            ${cancellationPolicyEntity.atMostHoursCharge}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex justify-content-center close-cancellation-modal">
+                                <button type="button" class="btn bg-light submit rounded-0"
+                                    data-bs-dismiss="modal">${rental.cancelButtonLabel}
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <!-- <div class="modal-backdrop fade show"></div> -->
+            </div>
+
+            <!-- Value Added Services Modal-->
+            <div class="modal modal__valueAddedServices" id="valueAddedServicesModal">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-dark rounded-0">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">${val.name}</h4>
+                            <button type="button" class="btn-close border-0" data-bs-dismiss="modal">
+                                <span class="icon-close"></span>
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <h5 class="pb-3">${rental.valueAddedTitle}</h5>
+
+                            
+                           
+                            <div data-sly-test.chkValue="${val.valueAddedEntity.riderAccessoriesList || val.valueAddedEntity.MotorcycleAccessoriesEntity}">
+                           
+                                <p class="pb-4 font-size-2">${rental.valueAdedPopUpDescription}</p>
+                                <div class="row gy-4">
+                                    <div class="col-md-6" data-sly-test="${val.valueAddedEntity.riderAccessoriesList}"
+                                        >
+                                        <span class="subtitle">${rental.riderAccessoriesLabel}</span>
+                                        <ul>
+                                            <li data-sly-repeat.value="${val.valueAddedEntity.riderAccessoriesList}">${value.riderAccessoriesName}</li>
+
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="col-md-6" data-sly-test="${val.valueAddedEntity.MotorcycleAccessoriesEntity}">
+                                        <span class="subtitle">${rental.bikeAccessoriesLabel}</span>
+                                        <ul>
+                                            <li data-sly-repeat.bikeService="${val.valueAddedEntity.MotorcycleAccessoriesEntity}">${bikeService.bikeAccessoriesName}</li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                        
+                            <div data-sly-test="${!chkValue}">
+
+                                <div class="col-md-6">
+                                         ${rental.noResultMessage}
+
+                                </div>
+
+                            </div>
+                            <div class="col-12 mt-5 d-flex justify-content-center close-cancellation-modal">
+                                <button type="button" class="btn bg-light submit rounded-0"
+                                    data-bs-dismiss="modal">${rental.cancelButtonLabel}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-backdrop fade show"></div> -->
+            </div>
+            <!-- End Value Added Services Modal-->
+
+        </div>
+        <!--Operator bike title-->
+
+        <div class="title title_v3 title_center bg-dark-black m pt-4 pt-md-5">
+            <div id="" class="cmp-title">
+                <h3 class="cmp-title__text text-center ride-rental-head">${rental.rideAndRentalTitle}</h3>
+            </div>
+        </div>
+
+
+        <!--operator bikes (Rental and ride prices)-->
+        <div class="container-fluid bg-dark-black">
+            <div class="container">
+                <div class="rideAndRental-comp bg-dark-black">
+                    <div class="search-results-comp__body-container">
+                        <div class="row gy-4">
+                            <div class="col-md-6 col-xl-4 ride-rental-card"
+                                data-sly-repeat.productList="${val.operatorProductListEntity @ begin = 0,  end = rental.bikesLimit}">
+
+                                <div class="card border-0">
+
+                                    <div class="position-relative ride-list-img"
+                                        data-sly-test.chkImg="${productList.motorThumbnail==no_selection}">
+
+                                        <img class="card-img-top d-block" loading="lazy"
+                                            src="${rental.defaultBikeImage}" alt="">
+
+                                    </div>
+
+                                    <div class="position-relative ride-list-img"
+                                        data-sly-test.chkImg="${!chkImg}">
+
+                                        <img class="card-img-top d-block" loading="lazy"
+                                            src="${productList.motorThumbnail}" alt="">
+                                    </div>
+
+                                    <div class="card-body p-0">
+                                        <div class="pt-4 px-3 pb-3">
+                                            <span class="text-white bike-name">${productList.displayName}</span>
+
+                                            <span class="text-neutral-yellow bike-number">-
+                                                ${productList.registrationNumber}</span>
+                                        </div>
+                                        <div class="py-2 px-3 price-row">
+                                            <div class="row">
+                                                <div class="col-6 pe-1 d-flex flex-wrap flex-column"
+                                                    data-sly-list.price="${productList.priceArrayEntityList}">
+                                                    <div>
+                                                        <span class="text-neutrak-light-grey bike-short-info"
+                                                            data-sly-test="${priceList.first?'first':''}">
+                                                            ${rental.daysBasedRate}
+                                                        </span>
+                                                    </div>
+                                                    <div class="mb-1">
+                                                        <span class="text-white bike-price"
+                                                            data-sly-test="${priceList.first?'first':''}">${productList.currency}
+                                                            ${price.value}</span>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="p-3">
+                                            <div class="row mb-3">
+                                                <div class="col-8 pe-1 d-flex flex-wrap flex-column">
+                                                    <span
+                                                        class="text-white bike-short-label">${rental.travelPermit}
+                                                    </span>
+                                                    <span
+                                                        class="text-neutrak-light-grey bike-short-info">${productList.registeredForTravel}
+                                                    </span>
+
+                                                    <!--/* <span
+                                                        class="text-neutrak-light-grey bike-short-info">${model.defaultTravelPermit}
+                                                    </span> */-->
+
+                                                </div>
+                                                <div class="col-4 ps-1 d-flex flex-wrap flex-column">
+                                                    <span
+                                                        class="text-end text-white bike-short-label">${rental.age}</span>
+                                                    <span
+                                                        class="text-end text-neutrak-light-grey bike-short-info">${productList.age}
+                                                        ${rental.yearsLabel}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="button button__quick-view show-quickViewBikeModal">
+                                                    <button class="cmp-button px-2 quickView"
+                                                        data-fleetId="${productList.fleetId}"
+                                                        id="show-quickViewBikeModa_${productList.fleetId}">
+                                                        ${rental.quickViewLabel}
+                                                    </button>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--quick view pop up-->
+
+                                <div class="modal modal__quickViewBikeModal fade" id="${productList.fleetId}"
+                                    tabindex="-1" aria-labelledby="quickViewBikeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal__quickViewBikeModal-dialog">
+                                        <div class="modal-content modal__quickViewBikeModal-content rounded-0">
+                                            <div class="modal-body modal__quickViewBikeModal-body">
+                                                <button type="button"
+                                                    class="close__quickViewBikeModalBtn d-flex flex-wrap justify-content-center align-items-center border-0"
+                                                    id="hide__quickViewBikeModalBtn${productList.fleetId}">
+                                                    <span class="icon-close"></span>
+                                                </button>
+
+
+                                                <div class="row">
+
+                                                    <div class="col-md-6"
+                                                        data-sly-test.chkImg="${productList.motorThumbnail==no_selection}">
+
+
+
+                                                        <div class="slider slider__mega-carousel">
+
+                                                            <img class="w-100" loading="lazy"
+                                                                src="${rental.defaultBikeImage}" alt="" />
+
+                                                        </div>
+                                                        <div
+                                                            class="slider slider__thumb-carousel slider__nav-carousel">
+
+                                                            <img loading="lazy" src="${rental.defaultBikeImage}"
+                                                                alt="" />
+
+                                                        </div>
+
+
+                                                        <!-- <div>                                     
+                                                            <img class="w-100" loading="lazy"
+                                                                src="${model.defaultBikeImage}" alt="" />
+
+                                                        </div> -->
+
+                                                    </div>
+                                                    <div class="col-md-6" data-sly-test="${!chkImg}">
+
+                                                        <div class="slider slider__mega-carousel">
+                                                            <div data-sly-repeat="${productList.bikeImageList}">
+                                                                <img class="w-100 bikeListImage-quickView"
+                                                                    loading="lazy" src="${item}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="slider slider__thumb-carousel slider__nav-carousel">
+                                                            <div data-sly-repeat="${productList.bikeImageList}">
+                                                                <img class="bikeListImage-quickView"
+                                                                    loading="lazy" src="${item}" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="col-md-6">
+                                                        <div>
+                                                            <span data-sly-test="${productList.isVerified}"
+                                                                class="badge bg-primary text-white py-1 px-2"
+                                                                data-sly-test="${productList.isVerified=='true'}">${rental.verifiedOperatorLabel}</span>
+                                                        </div>
+                                                        <div
+                                                            class="mt-4 mb-3 d-flex flex-wrap align-items-center">
+                                                            <span data-sly-test="${productList.displayName}"
+                                                                class="text-white bike-name">${productList.displayName}</span>
+                                                            <span
+                                                                data-sly-test="${productList.registrationNumber}"
+                                                                class="text-neutral-yellow bike-number ms-1">-
+                                                                ${productList.registrationNumber}</span>
+                                                        </div>
+                                                        <div class="my-2">
+                                                            <div class="row">
+                                                                <div class="col-6 pe-1 d-flex flex-wrap flex-column mb-3"
+                                                                    data-sly-list.price="${productList.priceArrayEntityList}">
+                                                                    <div class=""
+                                                                        data-sly-test="${price.first?'first':''}">
+                                                                        <span
+                                                                            data-sly-test="${productList.priceArrayEntityList}"
+                                                                            class="text-white bike-price">${productList.currency}
+                                                                            ${price.value}</span>
+
+                                                                    </div>
+                                                                    <div
+                                                                        data-sly-test="${priceList.first?'first':''}">
+                                                                        <span
+                                                                            data-sly-test="${productList.priceArrayEntityList}"
+                                                                            class="text-neutrak-light-grey bike-short-info-label">
+                                                                            ${rental.daysBasedRate}</span>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div
+                                                                    class="col-6 ps-1 d-flex flex-wrap flex-column mb-3">
+
+                                                                    </span>
+                                                                </div>
+
+                                                                <div
+                                                                    class="col-6 pe-1 d-flex flex-wrap flex-column mb-3">
+                                                                    <span data-sly-test="${productList.age}"
+                                                                        class="bike-short-info-label">${rental.age}</span>
+                                                                    <span data-sly-test="${productList.age}"
+                                                                        class="bike-short-info">${productList.age}
+                                                                        ${rental.yearsLabel}</span>
+                                                                </div>
+                                                                <div
+                                                                    class="col-6 ps-1 d-flex flex-wrap flex-column mb-3">
+                                                                    <span
+                                                                        data-sly-test="${productList.approxKmsRun}"
+                                                                        class="bike-short-info-label">${rental.approximateKm}</span>
+                                                                    <div>
+                                                                        <span
+                                                                            data-sly-test="${productList.approxKmsRun}"
+                                                                            class="bike-short-info">${productList.approxKmsRun}
+                                                                        </span><span
+                                                                            data-sly-test="${productList.approxKmsRun}"
+                                                                            class="bike-short-info-label">${rental.dateLabel}
+                                                                            ${rental.currentDate}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="col-6 pe-1 d-flex flex-wrap flex-column mb-3">
+                                                                    <span class="bike-short-info-label"
+                                                                        data-sly-test="${productList.motorcycleLocation}">${rental.locationLabel}</span>
+                                                                    <span class="bike-short-info"
+                                                                        data-sly-test="${productList.motorcycleLocation}">${val.name},
+                                                                        ${productList.motorcycleLocation}</span>
+
+                                                                </div>
+                                                                <div
+                                                                    class="col-6 ps-1 d-flex flex-wrap flex-column mb-3">
+                                                                    <span class="bike-short-info-label"
+                                                                        data-sly-test="${productList.registeredForTravel}">${rental.travelPermit}</span>
+                                                                     <span class="bike-short-info"
+                                                                        data-sly-test="${productList.registeredForTravel}">${productList.registeredForTravel}</span> 
+
+                                                                        <!--/* <span class="bike-short-info"
+                                                                        data-sly-test="${productList.registeredForTravel}">${model.defaultTravelPermit}</span> */-->
+                                                                        </div>
+                                                                <div class="col-12 mb-3">
+                                                                    <span
+                                                                        class="bike-short-info-label customize-head"
+                                                                        data-sly-test="${productList.motorcycleCustomisation}">${rental.customizations}</span>
+                                                                    <div>
+                                                                        <span
+                                                                            class="badge d-inline-block bg-neutrak-light-grey text-neutrak-light-grey"
+                                                                            data-sly-test="${productList.motorcycleCustomisation}">${productList.motorcycleCustomisation}
+                                                                        </span>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3 d-flex flex-wrap">
+                                                            <span data-sly-test="${productList.isRSAAvailable}"
+                                                                class="badge d-inline-block p-2 me-2 bg-transparent text-white border"
+                                                                data-sly-test="${productList.isRSAAvailable=='true'}">${rental.rsaAvailableLabel}</span>
+                                                            <span
+                                                                data-sly-test="${productList.isPickupAvailable}"
+                                                                class="badge d-inline-block p-2 bg-transparent text-white border"
+                                                                data-sly-test="${productList.isPickupAvailable=='true'}">${rental.pickupAndDropAvailableLabel}</span>
+                                                        </div>
+                                                        <div>
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-6">
+                                                                    <div class="button button__primary-v2">
+                                                                        <button
+                                                                            class="cmp-button addRideButton arrow-r"
+                                                                            data-addRideUrl="${rental.addRideUrl @ context='uri' , extension = 'html'}"
+                                                                            data-modelName="${productList.displayName}"
+                                                                            data-operatorId="${rental.operatorId}">
+                                                                            <span
+                                                                                class="cmp-text">${rental.addRidebtnLabel}</span>
+                                                                            <span
+                                                                                class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-backdrop modal__quickViewBikeModal-backdrop fade show">
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <!--view complete list-->
+
+                            <div>
+
+                                <div
+                                    data-sly-test="${val.operatorProductListEntity.size <= rental.comparebikes}">
+
+                                    <button class="addRideButton" hidden
+                                        data-addRideUrl="${rental.addRideUrl  @ context='uri' , extension = 'html'}"
+                                        data-operatorId="${rental.operatorId}">${rental.viewAllBikeLabel}
+                                    </button>
+                                </div>
+                                <div data-sly-test="${val.operatorProductListEntity.size > rental.comparebikes}">
+
+                                    <button class="addRideButton"
+                                        data-addRideUrl="${rental.addRideUrl  @ context='uri' , extension = 'html'}"
+                                        data-operatorId="${rental.operatorId}">${rental.viewAllBikeLabel}
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!--end of view complete list-->
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- End Quick View Bike Modal -->
+
+
+
+        <!--end of operator bike-->
+    </div>
+</div>
+</div>

@@ -1,0 +1,198 @@
+<sly data-sly-use.model="com.re.wanderlust.core.models.RideListingModel">
+    <div class="rew-rideListing" data-sly-test="${!model.hideComponent}">
+        <div class="rideOut-listing-comp rideOut-listing-comp-ga dataAttribute" data-currentNode="${currentNode.path}" data-rideLevelLabel="${model.rideLevelLabel}" data-distanceLabel="${model.distanceLabel}" data-daysLabel="${model.daysLabel}" data-notFound="${model.notFound}" data-badRequest="${model.badRequest}" data-serverError="${model.serverError}">
+            <div class="rideOut-listing-comp__body-container">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="rideOut-listing-comp__filter-mob-btn-group px-0 d-flex flex-wrap d-md-none position-fixed start-0 end-0">
+                            <div class="button ${model.rideListingFloatingButton} w-100">
+                                <button class="cmp-button border-0 px-2" id="showFilterPanelMobBtn">
+                                    <span class="cmp-text">${model.filterLabel}</span>
+                                    <span class="cmp-icon">
+
+                                    <img class="filter-icon" src="${model.filterImage}" alt="${model.filterAlt}" title="${model.filterAlt}">
+                                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20.736" height="11.728" viewBox="0 0 20.736 11.728">
+                                            <path id="Path_2293" data-name="Path 2293" d="M9.8,9.262V.723a.723.723,0,0,0-1.447,0v8.54a2.653,2.653,0,0,0,0,5.1v5.646a.723.723,0,0,0,1.447,0V14.367a2.653,2.653,0,0,0,0-5.1ZM3.376,2.029V.723a.723.723,0,1,0-1.446,0V2.029a2.653,2.653,0,0,0,0,5.1V20.013a.723.723,0,1,0,1.446,0V7.133a2.653,2.653,0,0,0,0-5.1Z" transform="translate(0 11.728) rotate(-90)" fill="#656565"/>
+                                        </svg> -->
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xxl-3 search-filter">
+                            <div class="rideOut-filter">
+                                <div class="rideOut-listing-comp__filter-panel">
+                                    <div class="rideOut-listing-comp__filter-panel-header position-relative p-3 d-flex flex-wrap justify-content-between align-items-center">
+                                        <button class="d-block d-md-none position-absolute top-0 end-0 mt-2 mx-2" id="hideFilterPanelMobBtn" type="button">
+                                    <span class="icon-close"></span>
+                                </button>
+                                        <h5 class="text-white">${model.filterLabel}</h5>
+                                        <!--/* <div class="button">
+                                    <button class="cmp-button bg-transparent rounded-0 p-0">${model.resetAllLabel}</button>
+                                </div> */-->
+                                    </div>
+                                    <div class="rideOut-listing-comp__filter-panel-body px-3 pb-3">
+                                        <div class="accordion accordion-flush">
+                                            <div class="accordion-item bg-transparent">
+                                                <button class="accordion-button fs-6 py-2 bg-transparent location_filterLabel" data-filterLabel=" ${model.locationFilterLabel}" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                            ${model.locationFilterLabel}
+                                            <span class="icon-arrow-down d-block position-absolute"></span>
+                                        </button>
+                                                <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne">
+                                                    <div class="accordion-body">
+    
+                                                        <div class="form-check d-block position-relative" data-sly-repeat="${model.locationList}">
+                                                            <input class="form-check-input" type="checkbox" value="${item}" id="${item}" name="location">
+                                                            <label class="form-check-label " for="${item}">${item}</label>
+                                                        </div>
+    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           <div class="accordion-item bg-transparent">
+                                               <button class="accordion-button fs-6 py-2 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                ${model.categoryFilterLabel}
+                                                <span class="icon-arrow-down d-block position-absolute"></span>
+                                                </button>
+                                                <div id="flush-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne">
+                                                    <div class="accordion-body">
+                                                        <div class="form-check d-block position-relative" data-sly-repeat="${model.categoriesList}">
+                                                            <sly data-sly-test.var1="${model.CurrentCategory}"></sly>
+                                                            <sly data-sly-test.var2="${model.categoriesList[item]}"></sly>
+                                                            <input class="form-check-input" type="checkbox" value="${model.categoriesList[item]}" id="${item}" data-sly-test="${var1 == var2}" name="category" Checked>
+                                                            <input class="form-check-input" type="checkbox" value="${model.categoriesList[item]}" id="${item}" data-sly-test="${var1 != var2}" name="category">
+                                                            <label class="form-check-label" for="${item}">${item}</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rideOut-listing-comp__filter-panel-footer p-2">
+                                        <div class="button button__primary-v2 col-12 ps-1">
+                                            <button class="cmp-button position-relative rounded-0" id="applyBtn">
+                                                <span class="cmp-icon cmp-icon-before"></span>
+                                                <span class="cmp-text">${model.ctaLinkLabel}</span>
+                                                <span class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-xxl-9 rideOut-listing-comp-wrap">
+                            <div data-sly-test="${!model.checkBoxToHideTitle}" class="mb-3">
+                                <h5 class="title text-white mb-3">${model.tripTitleLabel}</h5>
+
+                                <!--/* <h6 class="subtitle pb-2">Short Trips</h6> */-->
+
+                            </div>
+                            <div class="row gy-4 ride-list-container" data-result="${model.searchResultList.size}">
+                                <div class="col-md-6 col-xl-4" data-sly-repeat.result="${model.searchResultList}">
+                                        <div class="card border-0 rounded-0">
+                                            <div class="position-relative ride-list-img">
+                                                <picture>
+                                                    <source class="w-100 d-block" srcset="${result.mobileImage}" media="(max-width: 767px)">
+                                                    <img loading="lazy" class="w-100 d-block" srcset="${result.desktopImage}" alt="${result.altText}" title="${result.altText}">
+                                                </picture>
+                                            </div>
+                                    
+                                            <div class="card-body p-3">
+                                                <h5 class="card-title mb-3">${result.tourName}</h5>
+                                                <div>
+                                                    <ul class="d-flex flex-wrap justify-content-between p-0">
+                                                        <li class="d-flex flex-wrap text-start flex-column">
+                                                            <i></i>
+                                                            <span class="label">${model.daysLabel}</span>
+                                                            <span>${result.daysCount}</span>
+                                                        </li>
+                                                        <li class="d-flex flex-wrap text-start flex-column">
+                                                            <i></i>
+                                                            <span class="label">${model.distanceLabel}</span>
+                                                            <span class="totalDistance">${result.totalDistance}</span>
+                                                        </li>
+                                                        <li class="d-flex flex-wrap text-start flex-column">
+                                                            <i></i>
+                                                            <span class="label">${model.rideLevelLabel}</span>
+                                                            <span>${result.terrain}</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <a href="${result.pagePath}" data-tourName="${result.tourName}" class="stretched-link text-decoration-none rides-cards"></a>
+                                        </div>
+                                </div>
+                            </div>
+
+                        <div class="col-12 text-center"  id="noResultWrapper" hidden>
+                            <h6 class="mb-2 text-white">${model.noResultTitle}</h6>
+                            <p class="mb-0">${model.noResultDesc}</p>
+                        </div>
+                        
+                        <div class="container recommended-operator-loader">
+                            <div class="loading">
+                                <div class="loading-bar"></div>
+                                <div class="loading-bar"></div>
+                                <div class="loading-bar"></div>
+                                <div class="loading-bar"></div>
+                            </div>
+                        </div>
+
+                            <!--/* for HandleBar
+                            <div class="row gy-4 ride-list-container">
+
+                            </div> */-->
+                            <div class="col-md-12 text-center" data-sly-test ="${model.loadMore}">
+                                <button type="button" class="loadMoreBtn">${model.loadMoreCtaLabel}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+
+
+        <script class="rideList-template" type="text/x-handlebars-template">
+
+            {{#each this}}
+            <div class="col-md-6 col-xl-4">
+                <div class="card border-0 rounded-0">
+                    <div class="position-relative">
+                        <picture>
+                            <source class="w-100 d-block" srcset="{{mobileImage}}" media="(max-width: 767px)">
+
+                            <img loading="lazy" class="w-100 d-block" srcset="{{desktopImage}}" alt="{{altText}}" title="{{altText}}">
+
+                        </picture>
+                    </div>
+                    <div class="card-body p-3">
+                        <h5 class="card-title mb-3">{{tourName}}</h5>
+                        <div>
+                            <ul class="d-flex flex-wrap justify-content-between p-0">
+                                <li class="d-flex flex-wrap text-start flex-column">
+                                    <i></i>
+                                    <span class="daysLabel label"></span>
+                                    <span>{{daysCount}}</span>
+                                </li>
+                                <li class="d-flex flex-wrap text-start flex-column">
+                                    <i></i>
+                                    <span class="distanceLabel label"></span>
+                                    <span>{{totalDistance}}</span>
+                                </li>
+                                <li class="d-flex flex-wrap text-start flex-column">
+                                    <i></i>
+                                    <span class="rideLevelLabel label"></span>
+                                    <span>{{terrain}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="{{pagePath}}" data-tourName="{{tourName}}" class="stretched-link text-decoration-none rides-cards"></a>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+    </div>
+</sly>

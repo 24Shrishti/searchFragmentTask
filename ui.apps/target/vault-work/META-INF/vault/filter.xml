@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/re-wanderlust/clientlibs"/>
+    <filter root="/apps/re-wanderlust/components"/>
+    <filter root="/apps/re-wanderlust/i18n"/>
+    <filter root="/apps/sling"/>
+    <filter root="/apps/re-wanderlust/templates"/>
+</workspaceFilter>

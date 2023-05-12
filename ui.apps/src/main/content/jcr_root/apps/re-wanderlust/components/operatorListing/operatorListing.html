@@ -1,0 +1,143 @@
+<div class="re-page-loader" id="pageLoad">
+    <div class="re-page-loader-inner">
+        <div class="fadein-element">
+            <img alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-01.svg">
+            <img alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-02.svg">
+            <img alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-03.svg">
+            <img alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-04.svg">
+            <img alt="Royal Enfield"
+                src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/pre-loader-05.svg">
+        </div>
+        <div class="loading-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+
+
+<sly data-sly-use.model="com.re.wanderlust.core.models.OperatorListingModel"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.itemsNumber="${model.itemsNumber}">
+
+    <div class="rew-OperatorListing" data-sly-test="${!model.hideComponent}">
+
+        <div class="operatorListingData"
+            data-apiHost="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].apiBaseUrl}"
+            data-operatorListingUrl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].operatorListingAPIUrl}"
+            data-limit="${model.itemsNumber}" data-fleetLabel="${model.fleetLabel}"
+            data-modelLabel="${model.modelLabel}" data-locationLabel="${model.locationLabel}"
+            data-filledStarIconPath="${model.filledStarIconPath}" data-preSuffixName="${model.preSuffixName}"
+            data-filledStarIconUnGlowPath="${model.filledStarIconUnGlowPath}"
+            data-totalReviewsLabel="${model.totalReview}" data-altText="${model.altText}" data-newTab="${model.newTab}"
+            data-operatorDetailPagePath="${model.path @context='uri'}" data-badRequest="${model.badRequest}"
+            data-notFound="${model.notFound}" data-serverError="${model.serverError}" data-pageNo="${model.list.pageNo}"
+            data-operatorType="${model.operatorType}">
+        </div>
+
+        <div class="row g-4 mt-md-4 list-container">
+          <div data-sly-test="${!model.hideTotalOperator}">
+            <p>${model.tourPartnersTitle} ${model.list.totalCount} ${model.operatorAvailable} </p>
+          </div>
+            <div class="col-md-6 col-lg-4 listCount operatorListingCard" data-sly-repeat="${model.list.operatorList}">
+                <a href="${model.path @context='uri'}${model.preSuffixName}/${item.entityId}" class="text-decoration-none nextPagePath" data-operatorDetailPagepath ="${model.path}">
+                    <div class="card card__operators-listing border-0 overflow-hidden imageClick rounded-0"
+                        data-entityValue="${item.entityId}">
+                        <div class="position-relative overflow-hidden list-img-gradient">
+                            <img src="${item.operatorImage}" class="card-figure w-100 rounded-0 cardClick"
+                                alt="${model.altText}" />
+                            <div class="operator-name-wrap position-absolute end-0 bottom-0 start-0 ms-2">
+                                <h5 class="card-title text-white mb-0 operatorName" data-operatorName="${item.name}">${item.name}</h5>
+                                <div
+                                    class="operator-ratings position-absolute top-0 end-0 me-3 mt-2 d-flex align-items-center">
+                                    <i data-sly-test.rating="${item.rating=='0'}"><img
+                                            src="${model.filledStarIconUnGlowPath}"></i>
+                                    <i data-sly-test="${!rating}"><img src="${model.filledStarIconPath}"></i>
+                                    <span class="rating text-white">${item.rating}</span>
+                                    <span class="ps-1">(${item.totalReviews}
+                                        ${model.totalReview})</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="d-flex flex-wrap justify-content-between p-0">
+                                <li class="d-flex flex-wrap text-left flex-column">
+                                    <span class="text-white">${item.fleet}</span>
+                                    <span class="label">${model.fleetLabel}</span>
+                                </li>
+                                <li class="d-flex flex-wrap text-left flex-column">
+                                    <span class="text-white">${item.model}</span>
+                                    <span class="label">${model.modelLabel}</span>
+                                </li>
+                                <li class="d-flex flex-wrap text-left flex-column">
+                                    <span class="text-white">${item.location}</span>
+                                    <span class="label">${model.locationLabel}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div data-sly-test="${model.list.flag != '0'}" class="loadMoreWrapper d-flex">
+            <button class="loadMoreBtn loaderButton">${model.buttonLabel}</button>
+        </div>
+
+
+
+        <script id="first_template" type="text/x-handlebars-template">
+{{#each operator_listing}}
+<div class="col-md-4">
+        <div class="card card__operators-listing border-0 overflow-hidden imageDirect" data-entityId="{{entity_id}}">
+            <a href="{{../OperatorDetailPagePath}}{{../suffixValue}}/{{entity_id}}" class="text-decoration-none">
+            <div class="position-relative overflow-hidden">
+                {{#if operator_image}}<img src="{{operator_image}}" class="card-figure w-100 rounded-0"  alt="{{../altText}}"/>{{/if}}
+                <div class="operator-name-wrap position-absolute end-0 bottom-0 start-0 ms-2">
+                    <h5 class="card-title text-white mb-0">{{name}}</h5>                 
+                    <div class="operator-ratings position-absolute top-0 end-0 me-3 mt-2 d-flex align-items-center">
+                    {{#if_eq rating '0'}}
+                    <i><img src="{{../filledStarIconUnGlowPath}}"></i> 
+                    {{else}}
+                    <i><img src="{{../filledStarIconPath}}"></i>  
+                    {{/if_eq}} 
+                    <span class="rating text-white">{{rating}}</span>
+                    <span class="ps-1">({{total_reviews}} {{../totalReviewCountLabel}})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <ul class="d-flex flex-wrap justify-content-between p-0">
+                    <li class="d-flex flex-wrap text-left flex-column">
+                        <span class="text-white">{{{limit fleet 2}}}</span>
+                        <span class="label">{{../fleetLabel}}</span>
+                    </li>
+                    <li class="d-flex flex-wrap text-left flex-column">
+                        <span class="text-white">{{limit model 2}}</span>
+                        <span class="label">{{../modelLabel}}</span>
+                    </li>
+                    <li class="d-flex flex-wrap text-left flex-column">
+                        <span class="text-white">{{limit location_count 2}}</span>
+                        <span class="label">{{../locationLabel}}</span>
+                    </li>
+                </ul>
+            </div>
+           </a>
+        </div>
+    </div>
+{{/each}}
+</script>
+
+    </div>
+
+</sly>
+
+<sly data-sly-call="${templates.placeholder @ isEmpty = !itemsNumber}"></sly>

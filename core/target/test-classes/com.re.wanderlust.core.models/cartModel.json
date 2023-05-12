@@ -1,0 +1,23 @@
+{
+  "cartModel": {
+    "jcr:primaryType": "nt:unstructured",
+    "selectionLabel": "Selection",
+    "dailyRateLabel": "Daily Price",
+    "deleteIconAltText": "Delete icon",
+    "anchorPath": "/content/royal-enfield/in/en/rentals/rental-landing-page/search-results-page/booking-form",
+    "totalAmount": "Total",
+    "jcr:lastModifiedBy": "divanshu_aem",
+    "serverError": "Error",
+    "proceedBtnLabel": "Proceed",
+    "badRequest": "Error",
+    "imgForCartIcon": "/content/dam/royal-enfield/rentals/shopping_cart-3.png",
+    "pickUpAndDrop": "Pickup",
+    "cartIconAltText": "cart icon",
+    "jcr:lastModified": "Mon Oct 17 2022 12:51:43 GMT+0530",
+    "sling:resourceType": "re-wanderlust/components/cartModal",
+    "imgAltText": "Delete icon",
+    "daysTotalRateLabel": "Total Days",
+    "notFound": "Error",
+    "imgForDeleteIcon": "/content/dam/royal-enfield/rentals/delete_outline.png"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "locationSelector": {
+    "jcr:primaryType":"nt:unstructured",
+    "jcr:createdBy":"admin",
+    "jcr:lastModifiedBy":"admin",
+    "serverError":"500error block",
+    "badRequest":"400error block",
+    "jcr:created":"Thu Sep 15 2022 19:07:18 GMT+0530",
+    "locationIconClass":"/home/groups/screens",
+    "jcr:lastModified":"Thu Sep 15 2022 19:07:44 GMT+0530",
+    "locationPlaceholder":"Placeholder for search",
+    "sling:resourceType":"re-wanderlust/components/locationSelector",
+    "notFound":"400error block",
+    "locationIconImage": "LocationIcon Image"
+  }
+}

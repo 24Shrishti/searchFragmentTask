@@ -1,0 +1,82 @@
+<sly data-sly-use.model="com.re.wanderlust.core.models.BikesAroundMeModel"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-test.startingPriceLabel="${model.startingPriceLabel}">
+
+
+    <div class="rew-BikesAroundMe rew-BikesAroundMe-ga" data-sly-test="${!model.hideComponent}">
+        <div class="bikesAroundMeDataAttribute" data-newTab="${model.newTab}"
+            data-baseApiUrl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].apiBaseUrl}"
+            data-bikesAroundMeApiUrl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].bikesAroundMeAPIUrl}"
+            data-currentLatKey="${caconfig['com.re.wanderlust.core.caconfig.LocalStorageKeysConfig'].currentLatKey}"
+            data-currentLongKey="${caconfig['com.re.wanderlust.core.caconfig.LocalStorageKeysConfig'].currentLongKey}"
+            data-updatedLatKey="${caconfig['com.re.wanderlust.core.caconfig.LocalStorageKeysConfig'].updatedLatKey}"
+            data-updatedLongKey="${caconfig['com.re.wanderlust.core.caconfig.LocalStorageKeysConfig'].updatedLongKey}"
+            data-startingPriceLabel="${model.startingPriceLabel}" data-timePeriodLabel="${model.timePeriodLabel}"
+            data-recommendedBikeLimit="${model.recommendedBikeLimit}"
+            data-currency="${caconfig['com.re.wanderlust.core.caconfig.APIKeysConfig'].currency}"
+            data-notFoundMessage="${model.notFound}" data-serverErrorMsg="${model.serverError}"
+            data-badRequest="${model.badRequest}"
+            data-nextPagePath="${model.nextPagePath @ context='uri' , extension = 'html' }"
+            data-defaultImagePath="${model.defaultImagePath}" data-bikeImgAltText="${model.bikeImgAltText}"
+            data-defaultLat="${model.defaultLat}" data-defaultLong="${model.defaultLong}"
+            data-fetchFromDefaultLatLong="${model.fetchFromDefaultLatLong}"
+            data-bikeImageMap="${model.bikeImageMap}" data-authorValue="${model.options}"
+            data-fetchBikesFromApi="${model.fetchBikesFromApi}">
+        </div>
+
+        <!-- Rides Around Me Carousel -->
+        <div class="rides-around-me-carousel-comp">
+            <div class="container">
+                <div class="row">
+                    <sly
+                        data-sly-resource="${'recommendedRidesCompTitle' @ resourceType='algolia/components/instantsearch/languageNavigation'}">
+                    </sly>
+                    <div class="col-12 search-list-container">
+                    </div>
+                    <div class="col-12 text-center" id="noResultWrapper-bikesAroundMe">
+                        <h6 class="mb-2 text-white" id="noREsultFound-bikesAroundMe"></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="container-bikes loader-bikes-around">
+                <div class="loading">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                </div>
+            </div>
+
+        </div>
+        <script class="search-template" type="text/x-handlebars-template">
+            <div class="rides-around-me-carousel-comp__carousel">
+                {{#each (bikesAroundMelimit response.data response.recommendedBikeLimit)}}
+                {{#if display_name}}
+                <div>
+                    <div class="position-relative image-container">
+                        <a href="{{../response.nextPagePath}}?model={{display_name}}&lat={{../response.lat}}&long={{../response.long}}" data-bikeName="{{display_name}}" class="bikesAroundMeAnchor" title="Bikes Around Me Image">
+                           {{#if newDisplay_name}}
+							       {{{splitImg ../response.defaultImage newDisplay_name.desktopImage ../response.bikeImgAltText}}} 
+                               {{else}}
+                               {{{splitImg ../response.defaultImage model_images ../response.bikeImgAltText}}}
+                            {{/if}}
+                          </a>
+                        <a class="bikesAroundMeAnchor" title="Bikes Around Me Link" data-bikeName="{{display_name}}" href="{{../response.nextPagePath}}?model={{display_name}}&lat={{../response.lat}}&long={{../response.long}}" class="mb-1 stretched-link">
+                            <h6 class="mb-1 bikeName">{{display_name}}</h6>
+                        </a>
+                        <div class="d-md-flex">
+                            <p class="mb-0">{{../response.startingPriceLabel}}
+                                <p><span>{{../response.currency}} {{{toFixed price}}}* </span> {{../response.timePeriodLabel}}</p>
+                            </p>
+
+                        </div>
+                    </div>      
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </script>
+        <!-- End Rides Around Me Carousel -->
+    </div>
+</sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty=!startingPriceLabel}"></sly>

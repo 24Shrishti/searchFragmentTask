@@ -1,0 +1,25 @@
+
+R
+java:S3740‰"/Provide the parametrized type for this generic.(÷Ô´Ôøÿÿÿÿ8ğøø»ü0
+R
+java:S3740¦"/Provide the parametrized type for this generic.(÷Ô´Ôøÿÿÿÿ8»±‚àş0
+|
+java:S2293Û"YReplace the type specification in this constructor call with the diamond operator ("<>").(î£×èúÿÿÿÿ8úøø»ü0
+~
+java:S1488±"`Immediately return this expression instead of assigning it to the temporary variable "newPrice".(Á­Ÿ›8€ùø»ü0
+U
+java:S2629š"7Use the built-in formatting to construct this argument.(ëòÁÅ8€ùø»ü0
+U
+java:S2629¸"7Use the built-in formatting to construct this argument.(Ô½¥É8»±‚àş0
+U
+java:S2629İ"7Use the built-in formatting to construct this argument.(Æäƒ°8€ùø»ü0
+l
+java:S2259ÿ"OA "NullPointerException" could be thrown; "getAEMPathConfig()" can return null.(¤ú¦8ûúø»ü0
+_
+java:S3457š"AFormat specifiers should be used instead of string concatenation.(ëòÁÅ8Ùûø»ü0
+_
+java:S3457¸"AFormat specifiers should be used instead of string concatenation.(Ô½¥É8¦³‚àş0
+_
+java:S3457İ"AFormat specifiers should be used instead of string concatenation.(Æäƒ°8Ùûø»ü0
+p
+java:S3776ù"RRefactor this method to reduce its Cognitive Complexity from 74 to the 15 allowed.(¦™¿–8Ùûø»ü0

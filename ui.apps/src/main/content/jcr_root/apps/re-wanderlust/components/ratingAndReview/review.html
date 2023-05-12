@@ -1,0 +1,59 @@
+<div class="review">
+	<sly data-sly-template.Reviews="${@ reviews}">
+        <div class="card rounded-0 border-0">
+            <div class="card-header p-3">${reviews.reviewTitle}</div>
+            <div class="card-body p-3">
+                <textarea name="review" id="review" class="form-control text-white border bg-transparent w-100 rounded-0 review-input reviewBox" placeholder="${reviews.preText}" rows="5"></textarea>
+                <small class="error error-text-reviewLimit">
+                    <p class="mt-1">${reviews.errForLimit}</p>
+                </small>
+                <small class="error error-text-notFill">
+                    <p class="mt-1">${reviews.errForUnfillBox}</p>
+                </small>
+                <div class="row flex-column mt-5">
+                    <div class="col-12 col-md-8 col-lg-7 col-xl-5 justify-content-center mx-auto">
+                        <div class="button button__primary-v2">
+                            <button class="cmp-button position-relative rounded-0" id="submitReviewBtn">
+                                <span class="cmp-text">${reviews.submitReviewText}</span>
+                                <span class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-7 col-xl-5 justify-content-center mx-auto mt-3">
+                        <div class="button button__white">
+                            <button class="cmp-button laterButton" data-bs-dismiss="modal">
+                                <span class="cmp-text">${reviews.laterBtn}</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!--/* <div class="font-size-2 modalWrapper">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#Modal-1">
+                        <span class="pe-1"><img src="/etc.clientlibs/re-wanderlust/clientlibs/clientlib-site/resources/images/icn_phone_call.svg"></span> View Invoices</a>
+                    </div> */-->
+                <!-- Modal-->
+                
+                <div id="data_attribute" data-limit="${reviews.limit}" data-submit_Btn_Url="${reviews.submitBtnUrl}.html"></div>
+            </div>
+        </div>
+		<div class="modal modal__modalWrapperBody review-comp-feedbackThanksModal p4 dataResponse" id="Modal-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content bg-dark rounded-0">
+					<!-- Modal body -->
+					<div class="modal-body">
+						<h2 class="pb-3">${reviews.thankyouPopMsg}</h2>
+						<div class="col-12 d-flex justify-content-center close-cancellation-modal mx-auto">
+							<div class="input-group button button__primary-v2 closeBtn">
+								<button class="cmp-button rounded-0 border-0">
+								<span class="cmp-icon cmp-icon-before button_close" data-bs-dismiss="modal">${reviews.closeBtn}</span>
+								<span class="cmp-icon cmp-icon-after icon-arrow-r position-absolute top-0 end-0 bottom-0 text-white bg-primary d-flex flex-wrap align-items-center justify-content-center"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="modal-backdrop fade show"></div> -->
+		</div>
+	</sly>
+</div>

@@ -1,0 +1,25 @@
+{
+  "tourSearchFormComp" : {
+    "continueLabel": "For Continue Button",
+    "description": "this is description.",
+    "mobileVideo": "/content/dam/re-wanderlust/terrainIcon.mp4",
+    "reLogoImage": "/content/dam/re-wanderlust/grey star.png",
+    "exploreButton": "CTA Explore Button ",
+    "altText": "Alt Text",
+    "montAndYearLabel": "Month And Year Label",
+    "startLocValidation": "Start Location DropDown",
+    "mute": "true",
+    "type": "H1",
+    "title": "Search For",
+    "selectMedia": "Video",
+    "exploreButtonLabel": "CTA Button Link ",
+    "selectMontYearPopup": "Select Month And Year Label",
+    "desktopVideo": "/content/dam/re-wanderlust/terrainIcon.mp4",
+    "fetchFromApi": "true",
+    "checkboxForExploreButton": "true",
+    "autoplay": "true",
+    "thumbnailMobile": "/content/dam/re-wanderlust/calenderIcon.png",
+    "thumbnailDesktop": "/content/dam/re-wanderlust/location Icon.png",
+    "whereLocValidation": "Enter Where Location DropDown"
+  }
+}

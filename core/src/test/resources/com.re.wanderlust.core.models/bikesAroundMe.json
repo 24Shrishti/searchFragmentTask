@@ -1,0 +1,20 @@
+{
+  "bikesAroundMe":{
+    "jcr:primaryType":"nt:unstructured",
+    "jcr:createdBy":"admin",
+    "jcr:lastModifiedBy":"admin",
+    "newTab":"false",
+    "serverError":"500error block",
+    "startingPriceLabel":"Starting price label",
+    "badRequest":"400error block",
+    "jcr:created":"Thu Sep 15 2022 14:07:47 GMT+0530",
+    "nextPagePath":"/home/groups/screens/screens-devices-master",
+    "recommendedBikeLimit":"1",
+    "timePeriodLabel":"Time period label",
+    "jcr:lastModified":"Thu Sep 15 2022 14:08:09 GMT+0530",
+    "sling:resourceType":"re-wanderlust/components/bikesaroundme",
+    "notFound":"400error block",
+    "defaultImagePath": "/home/groups/screens/screens-devices-master",
+    "bikeImgAltText": "bike image"
+  }
+}

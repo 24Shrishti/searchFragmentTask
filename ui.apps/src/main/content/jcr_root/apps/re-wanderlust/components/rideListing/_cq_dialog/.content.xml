@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Ride Listing"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.list.v2.editor]"
+    helpPath="https://www.adobe.com/go/aem_cmp_list_v3"
+    trackingFeature="core-components:list:v3">
+    <content
+        granite:class="cmp-list__editor"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <rideListLabel
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Ride List Label"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <searchPath
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the search path."
+                                                fieldLabel="Search Path"
+                                                name="./searchPath"
+                                                rootPath="/content/royal-enfield"/>
+                                            <limit
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                fieldDescription="Enter the limit of search result."
+                                                fieldLabel="Limit"
+                                                min="{Long}1"
+                                                name="./limit"/>
+                                            <daysLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of days label."
+                                                fieldLabel="Days Label"
+                                                name="./daysLabel"/>
+                                            <ridesLevelLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of ride level label."
+                                                fieldLabel="Ride Level Label"
+                                                name="./rideLevelLabel"/>
+                                            <distanceLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of distance level."
+                                                fieldLabel="Total Distance Label"
+                                                name="./distanceLabel"/>
+                                            <tripTitleLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the title of trip label."
+                                                fieldLabel="Trip Title"
+                                                name="./tripTitleLabel"/>
+                                            <filterLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of filter label."
+                                                fieldLabel="Filter Label"
+                                                name="./filterLabel"/>
+                                            <locationFilterLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of location filter label."
+                                                fieldLabel="Location Label"
+                                                name="./locationFilterLabel"/>
+                                            <categoryFilterLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of category filter label."
+                                                fieldLabel="Category Label"
+                                                name="./categoryFilterLabel"/>
+                                            <noResultTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the title for no result."
+                                                fieldLabel="No Result Title"
+                                                name="./noResultTitle"/> 
+                                            <noResultDesc
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the description for no result."
+                                                fieldLabel="No Result Description"
+                                                name="./noResultDesc"/>        
+                                            <ctaLinkLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of cta button label."
+                                                fieldLabel="CTA Button Label"
+                                                name="./ctaLinkLabel"/>
+                                            <loadMoreCtaLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of load more label."
+                                                fieldLabel="Load More Button Label"
+                                                name="./loadMoreCtaLabel"/>
+                                            <checkBoxToHideTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldDescription="Select the checkbox to hide the title."
+                                                name="./checkBoxToHideTitle"
+                                                text="Checkbox To Hide Title "
+                                                uncheckedValue="{Boolean}false"
+                                                value="{Boolean}true"/>
+                                            <filterImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the filter icon."
+                                                fieldLabel="Filter Icon"
+                                                name="./filterImage"/> 
+                                            <filterAlt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the alt text of filter icon."
+                                                fieldLabel="Filter Icon Alt Text"
+                                                name="./filterAlt"/>
+                                            <FilterBtnStyle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Select the floating button style."
+                                                fieldLabel="Filter Floating Button Style"
+                                                name="./rideListingFloatingButton">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <primary
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Primary Red Variation"
+                                                            value="button__primary"/>
+                                                    <ButtonWhite
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Primary White Variation"
+                                                            value="button__white"/>
+                                                    <ButtonBlack
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Primary Black Variation"
+                                                            value="button__black"/>
+                                                </items>
+                                            </FilterBtnStyle>      
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </rideListLabel>
+                    <error
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Error Label"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <errorLabels
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                path="re-wanderlust/components/commonFields/errorLabels"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </error>
+                    <hideComponent
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Hide Component"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hideComponent
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                path="re-wanderlust/components/commonFields/hideComponent"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </hideComponent>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

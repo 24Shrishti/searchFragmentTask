@@ -1,0 +1,18 @@
+{
+  "reviewListing":{
+
+    "jcr:primaryType":"nt:unstructured",
+    "jcr:createdBy":"admin",
+    "wanderlustCategories":"Rental",
+    "jcr:lastModifiedBy":"admin",
+    "newTab":"false",
+    "reviewedRatingLabel":"rating",
+    "jcr:created":"Fri Sep 16 2022 15:02:08 GMT+0530",
+    "readMoreLabel":"read more",
+    "limit":"3",
+    "jcr:lastModified":"Fri Sep 16 2022 15:02:59 GMT+0530",
+    "sling:resourceType":"re-wanderlust/components/reviewlisting",
+    "starIconImage":"/content/dam/re-wanderlust",
+    "reviewedLabel":"review label"
+  }
+}

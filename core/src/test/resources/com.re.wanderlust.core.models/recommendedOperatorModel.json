@@ -1,0 +1,26 @@
+{
+  "recommendedOperators": {
+    "jcr:primaryType":"nt:unstructured",
+    "jcr:createdBy":"admin",
+    "rzpDescription":"Razorpay description",
+    "razorpayLogo":"/content/dam/re-wanderlust/content-fragment-folder",
+    "successPath":"/content/screens/we-retail/apps/virtual-showroom/en",
+    "jcr:lastModifiedBy":"admin",
+    "jcr:created":"Thu Sep 15 2022 20:01:10 GMT+0530",
+    "title":"title",
+    "failedPath":"/content/screens/we-retail",
+    "jcr:lastModified":"Thu Sep 15 2022 20:02:14 GMT+0530",
+    "sling:resourceType":"re-wanderlust/components/recommendedOperators",
+   "operatorsLimit": "Operator_Limit",
+    "searchResultsPagePath": "Search_Result_Page_Path",
+    "starIconPath": "Star_Icon_Path",
+    "viewAllBtnLabel": "View_All_Label",
+    "operatorDetailPagePath": "Operator_Detail_Page",
+    "newTab": "New_Tab",
+    "starIconAltText": "Star_Icon_Alt_Text",
+    "thumbnailImageAltText": "Thumbnail_Image_Alt_Text",
+    "starRatingLabel": "Star"
+
+
+  }
+}

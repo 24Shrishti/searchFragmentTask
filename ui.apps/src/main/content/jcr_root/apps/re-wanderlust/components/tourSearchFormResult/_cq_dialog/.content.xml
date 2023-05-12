@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="ToursSearchForm"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <sortBy
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter sort by label."
+                                                fieldLabel="Sort By Label"
+                                                name="./sortByLabel"/>
+                                            <startingFrom
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter starting from label."
+                                                fieldLabel="Starting From Label"
+                                                name="./startingFormLabel"/>
+                                            <filterLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter filter label."
+                                                fieldLabel="Filter Label"
+                                                name="./filterLabel"/>
+                                            <tourDuration
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter tour duration label."
+                                                fieldLabel="Tour Duration Label"
+                                                name="./tourDurationLabel"/>
+                                            <resetAll
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter reset all label."
+                                                fieldLabel="Reset All Label"
+                                                name="./resetAllLabel"/>
+                                            <startPoint
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter start point label."
+                                                fieldLabel="Start Point Label"
+                                                name="./startPointLabel"/>
+                                            <destination
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter destination label."
+                                                fieldLabel="Destination Label"
+                                                name="./destinationLabel"/>
+                                            <languageSpoken
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter language spoken label."
+                                                fieldLabel="Language Spoken Label"
+                                                name="./languageSpokenLabel"/>
+                                            <tourRatings
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter tour ratings label."
+                                                fieldLabel="Tour Ratings Label"
+                                                name="./tourRatingsLabel"/>
+                                            <partners
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter partners label."
+                                                fieldLabel="Partners Label"
+                                                name="./partnersLabel"/>
+                                            <noResultFound
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter no result found label."
+                                                fieldLabel="No Result Found Label"
+                                                name="./noResultFoundLabel"/>
+                                            <pleaseChangeFiltersAndTryAgain
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter please change filters and try again label."
+                                                fieldLabel="Change Filters And Try Again Label"
+                                                name="./pleaseChangeFiltersAndTryAgainLabel"/>
+                                            <toursForYou
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter tours for you label."
+                                                fieldLabel="Tours For You Label"
+                                                name="./toursForYouLabel"/>
+                                            <startingPoint
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter starting Point label."
+                                                fieldLabel="Starting Point Label"
+                                                name="./startingPointLabel"/>
+                                            <where
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter where label."
+                                                fieldLabel="Where Label"
+                                                name="./whereLabel"/>
+                                            <monthAndYear
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter month and year label."
+                                                fieldLabel="Month And Year Label"
+                                                name="./monthandYearLabel"/>
+                                            <altText
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter Alt Text."
+                                                fieldLabel="Alt Text"
+                                                name="./altText"/>
+                                            <days
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter days label."
+                                                fieldLabel="Days"
+                                                name="./daysLabel"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </basic>
+                    <linkAndAction
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Link And Action"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <apply
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter apply label."
+                                                fieldLabel="Apply Label"
+                                                name="./applyLabel"/>
+                                            <search
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter search label."
+                                                fieldLabel="Search Label"
+                                                name="./searchLabel"/>
+                                            <rating
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter rating label."
+                                                fieldLabel="Rating Label"
+                                                name="./ratingLabel"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </linkAndAction>
+                    <error
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Error Label"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <errorLabels
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                path="re-wanderlust/components/commonFields/errorLabels"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </error>
+                    <icons
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Icons"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <calenderIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Enter calender icon."
+                                                fieldLabel="Calender Icon"
+                                                name="./calenderIconLabel"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </icons>
+                    <sortBy
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Sort By"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <sortByLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter sort by label."
+                                                fieldLabel="Sort By Label"
+                                                name="./sortByLabel"/>
+                                            <multifieldItems
+                                                jcr:primaryType="nt:unstructured"
+                                                jcr:title="Sort Filters"
+                                                sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                margin="{Boolean}true">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <column
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                                        <items jcr:primaryType="nt:unstructured">
+                                                            <multifield
+                                                                jcr:primaryType="nt:unstructured"
+                                                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                                                composite="{Boolean}true"
+                                                                fieldLabel="Sort Filters">
+                                                                <field
+                                                                    jcr:primaryType="nt:unstructured"
+                                                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                                                    fieldLabel="Field Items"
+                                                                    name="./sortOptions">
+                                                                    <items jcr:primaryType="nt:unstructured">
+                                                                        <sortFiltersKey
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldDescription="Enter the key for sort filters."
+                                                                            fieldLabel="Sort Filters Key"
+                                                                            name="./sortFiltersKey">
+                                                                            <items jcr:primaryType="nt:unstructured">
+                                                                                <priceDesc
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    text="PRICE_DESC"
+                                                                                    value="PRICE_DESC"/>
+                                                                                <priceAsc
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    text="PRICE_ASC"
+                                                                                    value="PRICE"/>
+                                                                                <ratingAsc
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    text="RATING_ASC"
+                                                                                    value="RATING_ASC"/>
+                                                                                <ratingDesc
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    text="RATING_DESC"
+                                                                                    value="RATING_DESC"/>
+                                                                                <motorCycleAgeDesc
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    text="MOTORCYCLE_AGE_DESC"
+                                                                                    value="MOTORCYCLE_AGE_DESC"/>
+                                                                                <motorCycleAgeAsc
+                                                                                    jcr:primaryType="nt:unstructured"
+                                                                                    text="MOTORCYCLE_AGE_ASC"
+                                                                                    value="MOTORCYCLE_AGE_ASC"/>
+                                                                            </items>
+                                                                        </sortFiltersKey>
+                                                                        <sortFiltersValue
+                                                                            jcr:primaryType="nt:unstructured"
+                                                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                                            fieldDescription="Enter the sort filters value."
+                                                                            fieldLabel="Sort Filters Value"
+                                                                            name="./sortFiltersValue"/>
+                                                                    </items>
+                                                                </field>
+                                                            </multifield>
+                                                        </items>
+                                                    </column>
+                                                </items>
+                                            </multifieldItems>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </sortBy>
+                    <searchFormCard
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Search Form Card"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <startingFrom
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter starting from label"
+                                                fieldLabel="Starting From Label."
+                                                name="./startingFromLabel"/>
+                                            <operatedBy
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter operated by label."
+                                                fieldLabel="Operated By Label"
+                                                name="./operatedByLabel"/>
+                                            <addToCompare
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter add to compare label."
+                                                fieldLabel="Add To Compare Label"
+                                                name="./addToCompareLabel"/>
+                                            <addedToCompare
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter added to compare label."
+                                                fieldLabel="Added To Compare Label"
+                                                name="./addedToCompareLabel"/>
+                                            <bookNowBtn
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter book now btn label."
+                                                fieldLabel="Book Now Btn Label"
+                                                name="./bookNowBtnLabel"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </searchFormCard>
+                    <validationMsg
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Validation Message"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <startPoint
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for start point."
+                                                fieldLabel="Start Point Message"
+                                                name="./startPointMsg"/>
+                                            <wherePoint
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for where point."
+                                                fieldLabel="Where Point"
+                                                name="./wherePoint"/>
+                                            <dateAndTime
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the validation message for date and time."
+                                                fieldLabel="Date And Time "
+                                                name="./dateAndTime"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </validationMsg>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

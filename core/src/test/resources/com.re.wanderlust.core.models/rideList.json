@@ -1,0 +1,18 @@
+{
+  "rideList":  {
+    "jcr:primaryType":"nt:unstructured",
+    "jcr:createdBy":"admin",
+    "jcr:lastModifiedBy":"admin",
+    "tourName":"variation1",
+    "totalDistance":"1",
+    "desktopImage":"/content/example",
+    "jcr:created":"Thu Sep 15 2022 19:36:58 GMT+0530",
+    "daysCount":"4",
+    "jcr:lastModified":"Thu Sep 15 2022 19:37:54 GMT+0530",
+    "sling:resourceType":"re-wanderlust/components/rideListing",
+    "terrain":"Star with glow",
+    "mobileImage":"/content/example/page",
+    "altText":"error",
+    "pagePath":"/content/example/page/path"
+  }
+}

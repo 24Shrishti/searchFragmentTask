@@ -1,0 +1,80 @@
+<sly data-sly-use.model="com.re.wanderlust.core.models.RecommendedRideOutsModel"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-test.iconLogoImage="${model.iconLogoImage}">
+
+    <div id="dataAttribute" data-newTab="${model.newTab}" data-cardLimit="${model.cardLimit}"
+         data-notFoundMsg="${model.notFound}" data-serverErrorMsg="${model.serverError}"
+         data-badRequest="${model.badRequest}" data-checkForApi="${model.checkForApi}"
+         data-baseApiUrl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].apiBaseUrl}"
+         data-recommendedRideOutsApiUrl="${caconfig['com.re.wanderlust.core.caconfig.APIUrlsConfig'].recommendedRideOutsAPIUrl}"
+         data-iconLogoImageAltText="${model.iconLogoImageAltText}" data-dayalabel="${model.dayLabel}" data-rightArrowIcon="${model.rightArrowIcon}"
+         data-thumbnailImageAltText="${model.thumbnailImageAltText}" data-iconLogoImage="${model.iconLogoImage}"
+         data-defaultLat="${model.defaultLat}" data-defaultLong="${model.defaultLong}" data-rideOuts="${model.rideOuts}">
+    </div>
+    <div class="rew-recommendedRidesOut rew-recommendedRidesOut-ga" data-sly-test="${!model.hideComponent}">
+        <!-- Recommended Ride Outs Carousel -->
+        <div class="recommended-ride-outs-comp">
+            <div class="container">
+                <div class="row">
+                    <sly
+                            data-sly-resource="${'ridesByReCompTitle' @ resourceType='algolia/components/instantsearch/languageNavigation'}">
+                    </sly>
+                    <div class="col-12 recommendedRideOut-search-list-container"></div>
+                    <div class="col-12 recommendedRideOutAuthored-search-list-container"></div>
+                    <div class="col-12 text-center" id="noResultWrapper-recommendedRideOuts">
+                        <h6 class="mb-2 text-white" id="noREsultFound-recommendedRideOuts"></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="container recommended-rideOuts-loader">
+                <div class="loading">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                </div>
+            </div>
+        </div>
+        <script id="authoredRideOut-search-template" type="text/x-handlebars-template">
+            <div class="recommended-ride-outs-comp__carousel">
+                {{#each this}}
+                <div class="position-relative card78">
+                    <div class="position-relative">
+                        <a class="recommendedRidesOutAnchor" data-rideOutName="{{rideName}}" href="{{webPagePath}}">
+                            <img loading="lazy" src="{{thumbnailImage}}" alt="{{rideName}}" class="w-100 mb-3" />
+                            <span class="badge position-absolute bottom-0 start-0 ms-2 mb-2 d-flex align-items-center">
+							<img src="{{../iconLogoImage}}" alt="{{../iconLogoImageAltText}}" class="me-2">{{daysCount}}</span>
+                        </a>
+
+                    </div>
+                    <h6 class="mb-1">{{rideName}}</h6>
+                    <p class="ride-location d-flex flex-wrap align-items-center mb-2">{{startLocation}} <span class="cmp-icon mx-1"><img src="{{../rightArrowIcon}}"> </span> {{endLocation}}</p>
+                    {{#hideShowDateDiv startDate endDate}}
+                    <p class="mb-0 ride-location-date">{{dateFormater startDate}} - {{dateFormater endDate}}</p>
+                    {{/hideShowDateDiv}}
+                </div>
+                {{/each}}
+            </div>
+        </script>
+        <script id="recommendedRideOut-search-template" type="text/x-handlebars-template">
+            <div class="recommended-ride-outs-comp__carousel">
+                {{#each (limit data.data cardLimit)}}
+                <div class="position-relative card78">
+                    <div class="position-relative">
+                        <a class="recommendedRidesOutAnchor" data-rideOutName="{{title}}" href="{{pagePath}}">
+                            <img loading="lazy" src="{{thumbnailImagePath}}" alt="{{../thumbnailImageAltText}}" class="w-100 mb-3" />
+                            <span class="badge position-absolute bottom-0 start-0 ms-2 mb-2 d-flex align-items-center">
+							<img src="{{../iconLogoImage}}" alt="{{../iconLogoImageAltText}}" class="me-2">{{substractDays startDateString endDateString}} {{../dayLabel}}</span>
+                        </a>
+
+                    </div>
+                    <h6 class="mb-1">{{title}}</h6>
+                    <p class="ride-location mb-2">{{origin}} <span class="cmp-icon icon-destination"> </span> {{destination}}</p>
+                    <p class="mb-0 ride-location-date">{{dateFormater startDateString}} - {{dateFormater endDateString}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </script>
+    </div>
+</sly>
+<sly data-sly-call="${template.placeholder @ isEmpty=!iconLogoImage}"></sly>

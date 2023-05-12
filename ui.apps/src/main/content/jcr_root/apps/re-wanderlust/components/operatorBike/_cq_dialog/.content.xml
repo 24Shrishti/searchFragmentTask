@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Operator Bike"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                        <operatorType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Select the booking type."
+                                                fieldLabel="Operator Type"
+                                                name="./operatorType">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <rental
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Rental"
+                                                        value="Rental"/>
+                                                    <tour
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Tour"
+                                                        value="Tour"/>
+                                                </items>
+                                            </operatorType>
+                                            <defaultOperatorBanner
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the default operator banner image."
+                                                fieldLabel="Default Operator Banner Image"
+                                                name="./defaultOperatorBanner"
+                                                rootPath="/content/dam/royal-enfield"/>
+                                            <dateLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of date label."
+                                                fieldLabel="Date Label"
+                                                name="./dateLabel"/>
+                                            <addRidebtnLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of add ride button label."
+                                                fieldLabel="Add Ride Button Label"
+                                                name="./addRidebtnLabel"/>
+                                            <seeAllBtnLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of see all button label."
+                                                fieldLabel="See All Button Label"
+                                                name="./seeAllBtnLabel"/>
+                                            <reviewsLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of review label."
+                                                fieldLabel="Reviews Count Label"
+                                                name="./reviewsLabel"/>
+                                            <ridesTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the title of rides."
+                                                fieldLabel="Rides Title"
+                                                name="./ridesTitle"/>
+                                            <perDayRate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of daily rate label."
+                                                fieldLabel="Daily Rate Label"
+                                                name="./daysBasedRate"/>
+                                            <registrationNo
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of registration number label."
+                                                fieldLabel="Registration Number Label"
+                                                name="./registrationNo"/>
+                                            <customizations
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of customization label."
+                                                fieldLabel="Customizations Label"
+                                                name="./customizations"/>
+                                            <age
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of age label."
+                                                fieldLabel="Age Label"
+                                                name="./age"/>
+                                            <approximateKm
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of approx kms label."
+                                                fieldLabel="Approx Kms Label"
+                                                name="./approximateKm"/>
+                                            
+                                            <travelPermit
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of travel permit label."
+                                                fieldLabel="Travel Permit Label"
+                                                name="./travelPermit"/>
+                                            <daysBasedRate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of days base rate label."
+                                                fieldLabel="Days Based Rate Label"
+                                                name="./daysBasedRate"/>
+                                            <fleetLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of fleet size label."
+                                                fieldLabel="Fleet Size Label"
+                                                name="./fleetLabel"/>
+                                            <modelLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of royal enfield model label."
+                                                fieldLabel="Royal Enfield Model Label"
+                                                name="./modelLabel"/>
+                                            <locationLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of location label."
+                                                fieldLabel="Location Label"
+                                                name="./locationLabel"/>
+                                            <errorMsg
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of error message."
+                                                fieldLabel="Error Message"
+                                                name="./errorMsg"/>
+                                            <quickViewLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of quick view label."
+                                                fieldLabel="Quick View Label"
+                                                name="./quickViewLabel"/>
+                                            <startingFromLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for starting for."
+                                                fieldLabel="Starting From Label"
+                                                name="./startingFromLabel"/>
+                                            <perDayLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the label for per day."
+                                                fieldLabel="Per Day Label"
+                                                name="./perDayLabel"/>
+                                            <containerId
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the parent container Id."
+                                                fieldLabel="Parent Container ID"
+                                                name="./containerId"/>    
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </basic>
+                    <links
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Links and Action"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <addRideUrl
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the redirection path of add ride button."
+                                                fieldLabel="Add Ride Url"
+                                                name="./addRideUrl"
+                                                rootPath="/content/royal-enfield"/>
+                                            <closeButtonLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter The text of close button label."
+                                                fieldLabel="Close Button Label"
+                                                name="./closeButtonLabel"/>
+                                            <seeAllBtnLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of see all button label."
+                                                fieldLabel="See All Button label"
+                                                name="./seeAllBtnLabel"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </links>
+                    <rideAndRental
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Ride And Rental"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <rideAndRentalTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the title of ride and rental."
+                                                fieldLabel="Title"
+                                                name="./rideAndRentalTitle"
+                                                required="{Boolean}true"/>
+                                            <limitOfBikes
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                defaultValue="2"
+                                                fieldDescription="Enter the limit of bikes."
+                                                fieldLabel="Limit of Bikes"
+                                                min="{Long}2"
+                                                name="./limitOfBikes"/>
+                                            <verifiedOperatorLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of verified operator label."
+                                                fieldLabel="Verified Operator Label"
+                                                name="./verifiedOperatorLabel"/>
+                                            <rsaAvailableLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of rsa available label."
+                                                fieldLabel="Rsa Available Label"
+                                                name="./rsaAvailableLabel"/>
+                                            <pickupAndDropAvailableLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of pickup and drop available Label."
+                                                fieldLabel="Pickup And Drop Available Label"
+                                                name="./pickupAndDropAvailableLabel"/>
+                                            <yearsLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of years label."
+                                                fieldLabel="Years Label"
+                                                name="./yearsLabel"/>
+                                            <viewAllBikeLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of view all bike button label."
+                                                fieldLabel="View All Bike Button Label"
+                                                name="./viewAllBikeLabel"/>
+                                            <defaultTravelPermit
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of default travel permit label."
+                                                fieldLabel="Default Travel Permit Label"
+                                                name="./defaultTravelPermit"/>
+                                            <defaultBikeImage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the default bike image."
+                                                fieldLabel="Default Bike Image"
+                                                name="./defaultBikeImage"
+                                                rootPath="/content/dam/royal-enfield"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </rideAndRental>
+                    <cancellationPolicy
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Cancellation Policy"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cancellationPolicyTitleLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the cancellation policy title label."
+                                                fieldLabel="Cancellation Policy Title Label"
+                                                name="./cancellationPolicyTitleLabel"/>
+                                            <cancellationPolicyTPopUpLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of cancellation policy popup label."
+                                                fieldLabel="Cancellation Policy Popup Label"
+                                                name="./cancellationPolicyTPopUpLabel"/>
+                                            <cancellationPolicyTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of cancellation policy title."
+                                                fieldLabel="Cancellation Policy Title "
+                                                name="./cancellationPolicyTitle"/>
+                                            <cancellationPolicyDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Enter the text of cancellation policy description."
+                                                fieldLabel="Cancellation Policy Description"
+                                                name="./cancellationPolicyDescription"/>
+                                            <timeFrameHeaderLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of time frame label."
+                                                fieldLabel="Time Frame Label"
+                                                name="./timeFrameHeaderLabel"/>
+                                            <cancellationAmountHeaderLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of cancellation amount header label."
+                                                fieldLabel="Cancellation Amount Header Label"
+                                                name="./cancellationAmountHeaderLabel"/>
+                                            <daysLessThanFirstWarningLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of days less than first warning label."
+                                                fieldLabel="Days Less Than First Warning Label"
+                                                name="./daysLessThanFirstWarningLabel"/>
+                                            <daysLessThanSecondWarningLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of days less than second warning label."
+                                                fieldLabel="Days Less Than Second Warning Label"
+                                                name="./daysLessThanSecondWarningLabel"/>
+                                            <daysLessThanThirdWarningLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of days less than third warning label."
+                                                fieldLabel="Days Less Than Third Warning Label"
+                                                name="./daysLessThanThirdWarningLabel"/>
+                                            <cancellationAmountLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of cancellation amount label."
+                                                fieldLabel="Cancellation Amount Label"
+                                                name="./cancellationAmountLabel"/>
+                                            <lateReturnLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of late return label."
+                                                fieldLabel="Late Return Label"
+                                                name="./lateReturnLabel"/>
+                                            <lateReturnFirstWarningLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the late return first warning label."
+                                                fieldLabel="Late Return First Warning Label"
+                                                name="./lateReturnFirstWarningLabel"/>
+                                            <lateReturnSecondWarningLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of late return second warning label."
+                                                fieldLabel="Late Return Second Warning Label"
+                                                name="./lateReturnSecondWarningLabel"/>
+                                            <lateReturnThirdWarningLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of late return third warning label."
+                                                fieldLabel="Late Return Third Warning Label"
+                                                name="./lateReturnThirdWarningLabel"/>
+                                            <currencyType
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the currency type."
+                                                fieldLabel="Currency Type"
+                                                name="./currencyType"/>
+                                            <cancelButtonLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of cancel button label."
+                                                fieldLabel="Cancel Button Label"
+                                                name="./cancelButtonLabel"/>
+                                            <amountPercentage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the amount percentage symbol."
+                                                fieldLabel="Amount Percentage Symbol"
+                                                name="./amountPercentageSymbol"/>
+                                            <betweenLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of days between label."
+                                                fieldLabel="Between Label"
+                                                name="./betweenLabel"/>
+                                            <toLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of days to label."
+                                                fieldLabel="To Label"
+                                                name="./toLabel"/>
+                                            <daysLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of days label."
+                                                fieldLabel="Days Label"
+                                                name="./daysLabel"/>
+                                            <moreDaysLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of more days label."
+                                                fieldLabel="More Days Label"
+                                                name="./moreDaysLabel"/>
+                                            <lateReturnNote
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Enter the text of late return label."
+                                                fieldLabel="Late Return Note"
+                                                name="./lateReturnNote"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </cancellationPolicy>
+                    <valueAdded
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Value Added"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <valueAddedTitle
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the title of value added."
+                                                fieldLabel="Value Added Popup Title"
+                                                name="./valueAddedTitle"/>
+                                            <valueAddedPopUpLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of value added pop up label."
+                                                fieldLabel="Value Added Popup Label"
+                                                name="./valueAddedPopUpLabel"/>
+                                            <valueAdedPopUpDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                fieldDescription="Enter the description of value added popup."
+                                                fieldLabel="Value Added Popup Description"
+                                                name="./valueAdedPopUpDescription"/>
+                                            <noResultMessage
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the no result found message."
+                                                fieldLabel="No Result Found Message"
+                                                name="./noResultMessage"/>
+                                            <riderAccessoriesLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of rider accessories label."
+                                                fieldLabel="Rider Accessories Label"
+                                                name="./riderAccessoriesLabel"/>
+                                            <bikeAccessoriesLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the text of bike accessories label."
+                                                fieldLabel="Bike Accessories Label"
+                                                name="./bikeAccessoriesLabel"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </valueAdded>
+                    <icons
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Icons"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <starIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the star icon."
+                                                fieldLabel="Star Icon"
+                                                name="./starIcon"
+                                                rootPath="/content/dam"/>
+                                            <starIconAltTxt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the alt text of star icon."
+                                                fieldLabel="Star Icon Alt Text"
+                                                name="./starIconAltTxt"/>
+                                            <fleetIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the fleet icon."
+                                                fieldLabel="Fleet Icon"
+                                                name="./fleetIcon"
+                                                rootPath="/content/dam"/>
+                                            <fleetIconAltTxt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the alt text of fleet icon."
+                                                fieldLabel="Fleet Icon Alt Text"
+                                                name="./fleetIconAltTxt"/>
+                                            <modelIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the royal enfield model icon."
+                                                fieldLabel=" Royal Enfield Model Icon"
+                                                name="./modelIcon"
+                                                rootPath="/content/dam"/>
+                                            <modelIconAltTxt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the alt text of royal enfield model icon."
+                                                fieldLabel="Model Icon Alt Text"
+                                                name="./modelIconAltTxt"/>
+                                            <locationIcon
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                fieldDescription="Select the location icon."
+                                                fieldLabel="Location Icon"
+                                                name="./locationIcon"
+                                                rootPath="/content/dam"/>
+                                            <locationIconAltTxt
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Enter the alt text of location icon."
+                                                fieldLabel="Location Icon Alt Text"
+                                                name="./locationIconAltTxt"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </icons>
+                    <error
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Error Label"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <errorLabels
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                path="re-wanderlust/components/commonFields/errorLabels"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </error>
+                    <hideComponent
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Hide Component"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <hideComponent
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/include"
+                                                path="re-wanderlust/components/commonFields/hideComponent"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </hideComponent>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
